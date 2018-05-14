@@ -1,0 +1,25 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Abstract
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Pseudo chapter
+\chapter*{\ }
+
+
+\begin{center}
+	\begin{large}
+		\textbf{Abstract}
+	\end{large}
+\end{center}
+\vspace{0.75em}
+
+\paragraph*{}
+
+The presented numerical study focuses on dynamical calculation of the under-relaxation factor during each sub-iteration step of the \textit{Fluid-Structure Interaction} solver using adaptive scehemes. The adaptive schemes presented in the study are \textit{Aitken's $\bigtriangleup^{2}$ method} and \textit{steepest descent method}. The mentioned schemes have been found to be efficient, yet easy to implement. The implemented schemes have been validated by a numerical simulation of flow around an elastically mounted circular cylinder at a Reynolds number of 200. (Cite Zhou)\vspace{0.75em}
+
+The calculations were performed on a 2-D 0-type curvilinear orthogonal grids containing a total of 120x100 control volumes.The FSI simulations were performed using a \textit{semi implicit predictor-corrector scheme} for fluid-structure coupling.The \textit{semi implicit predictor-corrector scheme} is a strong coupling scheme between flow and structural solver, while also maintaining the explicit time marching schemes. The simulations were carried out for different reduced damping coefficients $(Sg)$ and for a mass ratio $(M^{*})$ of 1. These cases were simulated with constant under-relaxation factor, and with dynamic under-relaxation factor using aitken's $\bigtriangleup^{2}$ method and steepest descent methods. The results were compared and validated with (Breuer and Muensch) and (zhou),the results were in good agreement with these established numerical data. Average time taken for sub-iterations within the time steps were calculated, \textit{Aitken's $\bigtriangleup^{2}$ method} was observed to be more efficient in accelerating the convergence.
+
+
