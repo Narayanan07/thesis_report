@@ -71,7 +71,7 @@ The equations governing the fluid flow and the displacement/deformation of the s
 \subsubsection*{Partitioned solver approach}
 Another approach to fluid-structure interaction is to use two distinct solvers to model both fluid and solid domains. This technique allows the coupling of the fluid and solid solution by maintaining suitable coupling conditions. The interfacial conditions are used explicitly to communicate information between the fluid and structure solutions.\par
 
-Some coupling algorithms were suggested by various studies (\citet{{piperno1995partitioned},{felippa2001partitioned},{farhat2000two}}) which allows for reuse of existing codes that have been developed for each field. This approach is very robust and can be used for wide variety of applications. The major disadvantage of this approach is that, the interface location that divides the fluid and the structure domains is not known apriori and usually changes in time. Thus, the partitioned approach requires tracking of the new interface location and its related quantities, which can be cumbersome and error-prone. The interface coupling conditions that are as stated below, have to be satisfied in order to have a stable solution.
+Some coupling algorithms were suggested by various studies (\citet{{piperno1995partitioned},{felippa2001partitioned},{farhat2000two}}) which allows for reuse of existing codes that have been developed for each field. This approach is very robust and can be used for wide variety of applications. The major disadvantage of this approach is that, the interface location that divides the fluid and the structure domains is not known a priori and usually changes in time. Thus, the partitioned approach requires tracking of the new interface location and its related quantities, which can be cumbersome and error-prone. The interface coupling conditions that are as stated below, have to be satisfied in order to have a stable solution.
 
 \begin{itemize}
 \item Kinematic coupling condition: The displacements, velocities and accelerations of the sub-zones have to be equal at the interface at any point in time.
@@ -88,8 +88,30 @@ $ f^{CFD}_{\Gamma}(t) = -f^{CSD}_{\Gamma}(t) $
 Depending on the influence of the structure movement on the fluid field the FSI problems are further subdivided into two following categories:
 
 \begin{itemize}
-\item[Explicit/Weakly coupled:]	In an explicitly coupled algorithm, there is no 
+ \item Explicit/Weakly coupled:	In an explicitly coupled algorithm, the equations of fluid mechanics,
+structural mechanics and the relative mesh movement are solved sequentially. Initially the governing equation of fluid is solved with the velocity boundary condition derived from the structural displacement. The structural mechanics equations are solved next with the forces obtained from the fluid solver. Finally the grid is adapted based on the structural displacement. This coupling scheme is termed as weak coupling, as there is no sub iteration between the two sub zones.
+
+ \item Implicit / Strongly coupled: In a strongly/implicitly coupled system, sub iterations between both the fluid and structural solvers are carried out at every time step till convergence is achieved.  The convergence is determined by maintaining a small enough structural residuum. Detailed explanation on this, is presented in the subsequent section. This approach is implicit in nature and more robust, however requires additional computation time.
 \end{itemize}
+
+\ref{fig:2.4} represents the schematic representation of explicit and implicitly coupled, partitioned approach to solving fluid structure interaction. In the presented study \textit{semi-implicit predictor-corrector} coupling scheme is used. 
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=2in]{explicit_coupling}
+    \label{fig:2.4a}
+    \caption{Explicit coupling} 
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=2in]{implicit_coupling}
+    \caption{Implicit coupling}
+    \label{fig:2.4b} 
+  \end{subfigure}
+  \caption{Representational sketch of explicit coupling \ref{fig:2.4a}, and implicit coupling \ref{fig:2.4b} approaches to solving partitioned, fluid-structure interaction problems,taken from }
+  \label{fig:2.4}
+\end{figure}
+
 
 
 
