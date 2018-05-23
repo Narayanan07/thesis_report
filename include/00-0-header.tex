@@ -16,8 +16,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{times}
-\usepackage[hidelinks]{hyperref} % clickable references
-\newcommand\HRule{\rule{\textwidth}{1pt}}
+
 % Fancy header and footer
 \usepackage{fancyhdr}
 
@@ -38,13 +37,14 @@
 \lstset{basicstyle=\footnotesize\ttfamily}
 
 % Links within pdf file
+\usepackage[hidelinks]{hyperref} % clickable references
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
-	linkcolor=black,
-	citecolor=black,
-	filecolor=black,
-	urlcolor=black,
+	linkcolor=red,
+	citecolor=red,
+	filecolor=red,
+	urlcolor=blue,
 	breaklinks=true,
 	bookmarksnumbered=true,
 	pdfstartpage={1},
@@ -110,6 +110,7 @@
 % A few commands
 \newcommand{\term}[1]{\textit{#1}}
 \newcommand{\code}[1]{\texttt{#1}}
+\newcommand\HRule{\rule{\textwidth}{1pt}}
 
 % Fancy bibliography, see http://merkel.zoneo.net/Latex/natbib.php
 \usepackage[square,comma,numbers,sort&compress]{natbib}

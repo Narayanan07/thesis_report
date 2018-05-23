@@ -13,7 +13,7 @@ Fluid-Structure Interaction (FSI) studies the interaction between a structure (s
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=3in]{fsi_domain}
-	\caption{Representational figure of Fluid-Structure Interaction domain,taken from [cite 'Richter']}
+	\caption{Representational figure of Fluid-Structure Interaction domain,taken from \citet{Richter}}
 	\label{fig:2.1}
 \end{figure}
 
@@ -30,7 +30,7 @@ Fluid-Structure Interaction (FSI) studies the interaction between a structure (s
     \caption{Both structure and fluid domains influencing each other}
     \label{fig:2.2b}
   \end{subfigure}
-  \caption{Representational figure of one-way \ref{fig:2.2a}, and two-way \ref{fig:2.2b} fluid-structure interaction domains,taken from [cite 'Richter']}
+  \caption{Representational figure of one-way \ref{fig:2.2a}, and two-way \ref{fig:2.2b} fluid-structure interaction domains,taken from \citet{Richter}}
   \label{fig:2.2}
 \end{figure}
 
@@ -55,10 +55,10 @@ The FSI problem is classified based on solution approaches and on the treatment 
  \end{itemize}
 \end{itemize} 
 
-\subsubsection*{Classification based on numerical solution approaches}
+\subsubsection{Classification based on numerical solution approaches}
 This classification is based on how the fluid and structural fields are getting solved. In \textit{monolithic solvers} both the fluid and structural domains are expressed by single set of equations, whereas in \textit{partitioned solver approach} structural fields and fluid fields are solved separately and additionally requires coupling of the distinct solvers. A brief introduction to these methods are represented below.    
 
-\subsubsection*{Monolithic solver approach}
+ \subsubsection*{Monolithic solver approach}
 The equations governing the fluid flow and the displacement/deformation of the structure are represented by single set of equations which are then solved simultaneously by an unified algorithm, within a single solver framework \citet{{Richter},{Becker_2014},{hubner2004monolithic},{michler2004monolithic}}. The central idea of monolithic solvers is to represent the interface by an homogeneous discretization, thus maintaining the conservation properties at the interface \citet{michler2004monolithic} \citet{van2003energy}. Although monolithic approach gives strong coupling between the fields, it is commonly considered to be impractical for real world applications. It also demands enormous computational power for solving such a large system of equations since it has to incorporate the behavior of both fluid flow and solid structure. Figure \ref{fig:2.3} represents a schematic of the monolithic and partitioned solver approaches in solving FSI problems.
     	  
 \begin{figure}[h]
@@ -68,7 +68,7 @@ The equations governing the fluid flow and the displacement/deformation of the s
   \label{fig:2.3}
 \end{figure}
 
-\subsubsection*{Partitioned solver approach}
+ \subsubsection*{Partitioned solver approach}
 Another approach to fluid-structure interaction is to use two distinct solvers to model both fluid and solid domains. This technique allows the coupling of the fluid and solid solution by maintaining suitable coupling conditions. The interfacial conditions are used explicitly to communicate information between the fluid and structure solutions.\par
 
 Some coupling algorithms were suggested by various studies (\citet{{piperno1995partitioned},{felippa2001partitioned},{farhat2000two}}) which allows for reuse of existing codes that have been developed for each field. This approach is very robust and can be used for wide variety of applications. The major disadvantage of this approach is that, the interface location that divides the fluid and the structure domains is not known a priori and usually changes in time. Thus, the partitioned approach requires tracking of the new interface location and its related quantities, which can be cumbersome and error-prone. The interface coupling conditions that are as stated below, have to be satisfied in order to have a stable solution.
@@ -81,9 +81,7 @@ $\psi^{CFD}_{\Gamma}(t) = \psi^{CSD}_{\Gamma}(t)$, $\dot{\psi}^{CFD}_{\Gamma}(t)
 \item Dynamic coupling condition: Conservation of the dynamic equilibrium of all forces at the interface needs to be satisfied. (Action and reaction forces must cancel out each other)
 
 $ f^{CFD}_{\Gamma}(t) = -f^{CSD}_{\Gamma}(t) $
-
 \end{itemize}
-
 
 Depending on the influence of the structure movement on the fluid field the FSI problems are further subdivided into two following categories:
 
@@ -94,23 +92,70 @@ structural mechanics and the relative mesh movement are solved sequentially. Ini
  \item Implicit / Strongly coupled: In a strongly/implicitly coupled system, sub iterations between both the fluid and structural solvers are carried out at every time step till convergence is achieved.  The convergence is determined by maintaining a small enough structural residuum. Detailed explanation on this, is presented in the subsequent section. This approach is implicit in nature and more robust, however requires additional computation time.
 \end{itemize}
 
-\ref{fig:2.4} represents the schematic representation of explicit and implicitly coupled, partitioned approach to solving fluid structure interaction. In the presented study \textit{semi-implicit predictor-corrector} coupling scheme is used. 
+Figure \ref{fig:2.4} represents the schematic representation of explicit and implicitly coupled, partitioned approach to solving fluid structure interaction. In the presented study \textit{semi-implicit predictor-corrector} coupling scheme is used. 
 
 \begin{figure}[h]
   \centering
   \begin{subfigure}[b]{0.4\linewidth}
     \includegraphics[width=2in]{explicit_coupling}
-    \label{fig:2.4a}
-    \caption{Explicit coupling} 
+    \caption{Explicit coupling}
+    \label{fig:2.4a}  
   \end{subfigure}
   \begin{subfigure}[b]{0.4\linewidth}
     \includegraphics[width=2in]{implicit_coupling}
     \caption{Implicit coupling}
     \label{fig:2.4b} 
   \end{subfigure}
-  \caption{Representational sketch of explicit coupling \ref{fig:2.4a}, and implicit coupling \ref{fig:2.4b} approaches to solving partitioned, fluid-structure interaction problems,taken from }
+  \caption{Representational sketch of explicit coupling \ref{fig:2.4a}, and implicit coupling \ref{fig:2.4b} approaches to solving partitioned, fluid-structure interaction problems,taken from \citet{munsch2015entwicklung}}
   \label{fig:2.4}
 \end{figure}
+
+\subsubsection{Classification based on meshing strategies}\par
+The FSI problem is further classified based on the meshing strategies implemented to couple the fluid and structure domains. They are classified into two methods:\textit{conforming mesh} and \textit{non-conforming mesh}\\
+
+\begin{itemize}
+ \item Conforming mesh method: In conforming mesh methods, the interface governing the fluid and structural domains is resolved such that the node connectivity is maintained between the domains. In this method, the interface conditions is considered as physical boundary conditions, which treat the interface location as part of the solution. Owing to the movement and/or deformation of the solid structure,re-meshing (or mesh-update) is required.
+ 
+ \item Non-conforming mesh method: The non-conforming mesh methods treat the interface location as constraints imposed on the model equations so that non-conforming meshes (node-connectivity need not be maintained between the domains) can be employed. As a result, the fluid and solid equations can be conveniently solved independently from each other with their respective grids, and re-meshing is not necessary. The distinction between these two types of meshes can be observed in figure \ref{fig:2.5}, where a solid body (a sphere) is moving in a fluid domain.  
+ \end{itemize} 
+ 
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=2.25in]{conforming_mesh}
+    \caption{Conforming mesh method representation at time $ t_{n} $ and $t_{n+1}$}
+    \label{fig:2.5a} 
+  \end{subfigure}
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=2.25in]{non-conforming_mesh}
+    \caption{Non-conforming mesh method representation at time $ t_{n} $ and $t_{n+1}$}
+    \label{fig:2.5b}  
+  \end{subfigure}
+  \caption{Examples of Conforming mesh \ref{fig:2.5a} and Non-conforming mesh \ref{fig:2.5b} methods, taken from \citet{hou2012numerical}.}
+  \label{fig:2.5}
+\end{figure} 
+
+\section{Governing equations of fluid flow and structural deformations}
+
+In Fluid-Structure Interaction problems, the solid moves through the fluid domain due to different forces or excitation. The computation domain changes with time and must be considered during the simulation. An approach which aims to solve this particular problem is Arbitrary Eulerian Lagrangian formulation, popularly referred to ALE formulation. The governing equation for conservation of mass and momentum are reformulated for a moving grid which are time dependent control volume and surface integrals. The governing equations for a Newtonian incompressible fluid in ALE formulation is given as follows.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}\label{eq 2}
+\frac{d}{dt} + (u \cdot \nabla)u = - \grad p + \nu \laplacian u
+\frac{d}{dt}(\int_{V(t)}^{}{\rho \detV})+ \int_{S(t)}^{}{\rho (U-U_{g}).n \detS} = 0
+F_D = 6\pi \mu a u
+\end{equation}
+
+\begin{equation}\label{eq:1}
+\frac{d}{dt} \int_{V(t)}^{}{\rho \detV}+ \int_{S(t)}^{}{\rho (U-U_{g}).n \detS} = 0
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
 
 
 
