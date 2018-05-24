@@ -1,0 +1,110 @@
+\begin{thebibliography}{14}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Becker et~al.(2014)Becker, Idelsohn, and O{\~{n}}ate]{Becker_2014}
+P.~Becker, S.~R. Idelsohn, and E.~O{\~{n}}ate.
+\newblock A unified monolithic approach for multi-fluid flows and
+  fluid{\textendash}structure interaction using the particle finite element
+  method with fixed mesh.
+\newblock \emph{Computational Mechanics}, 55\penalty0 (6):\penalty0 1091--1104,
+  dec 2014.
+\newblock \doi{10.1007/s00466-014-1107-0}.
+
+\bibitem[Breuer et~al.(2012)Breuer, De~Nayer, M{\"u}nsch, Gallinger, and
+  W{\"u}chner]{breuer2012fluid}
+Michael Breuer, Guillaume De~Nayer, Manuel M{\"u}nsch, Thomas Gallinger, and
+  Roland W{\"u}chner.
+\newblock Fluid--structure interaction using a partitioned semi-implicit
+  predictor--corrector coupling scheme for the application of large-eddy
+  simulation.
+\newblock \emph{Journal of Fluids and Structures}, 29:\penalty0 107--130, 2012.
+
+\bibitem[Demird{\v{z}}i{\'c} and Peri{\'c}(1988)]{demirdvzic1988space}
+I~Demird{\v{z}}i{\'c} and M~Peri{\'c}.
+\newblock Space conservation law in finite volume calculations of fluid flow.
+\newblock \emph{International journal for numerical methods in fluids},
+  8\penalty0 (9):\penalty0 1037--1050, 1988.
+
+\bibitem[Farhat and Lesoinne(2000)]{farhat2000two}
+Charbel Farhat and Michael Lesoinne.
+\newblock Two efficient staggered algorithms for the serial and parallel
+  solution of three-dimensional nonlinear transient aeroelastic problems.
+\newblock \emph{Computer methods in applied mechanics and engineering},
+  182\penalty0 (3-4):\penalty0 499--515, 2000.
+
+\bibitem[Felippa et~al.(2001)Felippa, Park, and Farhat]{felippa2001partitioned}
+Carlos~A Felippa, KC~Park, and Charbel Farhat.
+\newblock Partitioned analysis of coupled mechanical systems.
+\newblock \emph{Computer methods in applied mechanics and engineering},
+  190\penalty0 (24-25):\penalty0 3247--3270, 2001.
+
+\bibitem[Hou et~al.(2012)Hou, Wang, and Layton]{hou2012numerical}
+Gene Hou, Jin Wang, and Anita Layton.
+\newblock Numerical methods for fluid-structure interaction—a review.
+\newblock \emph{Communications in Computational Physics}, 12\penalty0
+  (2):\penalty0 337--377, 2012.
+
+\bibitem[H{\"u}bner et~al.(2004)H{\"u}bner, Walhorn, and
+  Dinkler]{hubner2004monolithic}
+Bj{\"o}rn H{\"u}bner, Elmar Walhorn, and Dieter Dinkler.
+\newblock A monolithic approach to fluid--structure interaction using
+  space--time finite elements.
+\newblock \emph{Computer methods in applied mechanics and engineering},
+  193\penalty0 (23-26):\penalty0 2087--2104, 2004.
+
+\bibitem[Michler et~al.(2004)Michler, Hulshoff, Van~Brummelen, and
+  De~Borst]{michler2004monolithic}
+C~Michler, SJ~Hulshoff, EH~Van~Brummelen, and Ren{\'e} De~Borst.
+\newblock A monolithic approach to fluid--structure interaction.
+\newblock \emph{Computers \& fluids}, 33\penalty0 (5-6):\penalty0 839--848,
+  2004.
+
+\bibitem[M{\"u}nsch and Breuer(2011)]{munsch2011numerical}
+M~M{\"u}nsch and M~Breuer.
+\newblock Numerical simulation of fluid--structure interaction using
+  eddy--resolving schemes.
+\newblock In \emph{Fluid Structure Interaction II}, pages 221--253. Springer,
+  2011.
+
+\bibitem[M{\"u}nsch(2015)]{munsch2015entwicklung}
+Manuel M{\"u}nsch.
+\newblock Entwicklung und anwendung eines semi-impliziten kopplungsverfahrens
+  zur numerischen berechnung der fluid-struktur-wechselwirkung in turbulenten
+  str{\"o}mungen mittels large-eddy simulationen.
+\newblock 2015.
+
+\bibitem[Piperno et~al.(1995)Piperno, Farhat, and
+  Larrouturou]{piperno1995partitioned}
+Serge Piperno, Charbel Farhat, and Bernard Larrouturou.
+\newblock Partitioned procedures for the transient solution of coupled
+  aroelastic problems part i: Model problem, theory and two-dimensional
+  application.
+\newblock \emph{Computer methods in applied mechanics and engineering},
+  124\penalty0 (1-2):\penalty0 79--112, 1995.
+
+\bibitem[Richter(2010)]{Richter}
+Thomas Richter.
+\newblock A monolithic multigrid solver for 3d fluid-structure interaction
+  problems.
+\newblock 2010.
+
+\bibitem[Thompson et~al.(1985)Thompson, Warsi, and
+  Mastin]{thompson1985numerical}
+Joe~F Thompson, Zahir~UA Warsi, and C~Wayne Mastin.
+\newblock \emph{Numerical grid generation: foundations and applications},
+  volume~45.
+\newblock North-holland Amsterdam, 1985.
+
+\bibitem[Van~Brummelen et~al.(2003)Van~Brummelen, Hulshoff, and
+  De~Borst]{van2003energy}
+EH~Van~Brummelen, SJ~Hulshoff, and R~De~Borst.
+\newblock Energy conservation under incompatibility for fluid--structure
+  interaction problems.
+\newblock \emph{Computer Methods in Applied Mechanics and Engineering},
+  192\penalty0 (25):\penalty0 2727--2748, 2003.
+
+\end{thebibliography}
