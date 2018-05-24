@@ -69,7 +69,7 @@ The equations governing the fluid flow and the displacement/deformation of the s
 \end{figure}
 
  \subsubsection*{Partitioned solver approach}
-Another approach to fluid-structure interaction is to use two distinct solvers to model both fluid and solid domains. This technique allows the coupling of the fluid and solid solution by maintaining suitable coupling conditions. The interfacial conditions are used explicitly to communicate information between the fluid and structure solutions.\par
+Another approach to fluid-structure interaction is to use two distinct solvers to model both fluid and solid domains. This technique allows the coupling of the fluid and solid solution by maintaining suitable coupling conditions. The interfacial conditions are used explicitly to communicate information between the fluid and structure solutions.\\
 
 Some coupling algorithms were suggested by various studies (\citet{{piperno1995partitioned},{felippa2001partitioned},{farhat2000two}}) which allows for reuse of existing codes that have been developed for each field. This approach is very robust and can be used for wide variety of applications. The major disadvantage of this approach is that, the interface location that divides the fluid and the structure domains is not known a priori and usually changes in time. Thus, the partitioned approach requires tracking of the new interface location and its related quantities, which can be cumbersome and error-prone. The interface coupling conditions that are as stated below, have to be satisfied in order to have a stable solution.
 
@@ -110,7 +110,7 @@ Figure \ref{fig:2.4} represents the schematic representation of explicit and imp
   \label{fig:2.4}
 \end{figure}
 
-\subsubsection{Classification based on meshing strategies}\par
+\subsection{Classification based on meshing strategies}\par
 The FSI problem is further classified based on the meshing strategies implemented to couple the fluid and structure domains. They are classified into two methods:\textit{conforming mesh} and \textit{non-conforming mesh}\\
 
 \begin{itemize}
@@ -139,17 +139,43 @@ The FSI problem is further classified based on the meshing strategies implemente
 
 In Fluid-Structure Interaction problems, the solid moves through the fluid domain due to different forces or excitation. The computation domain changes with time and must be considered during the simulation. An approach which aims to solve this particular problem is Arbitrary Eulerian Lagrangian formulation, popularly referred to ALE formulation. The governing equation for conservation of mass and momentum are reformulated for a moving grid which are time dependent control volume and surface integrals. The governing equations for a Newtonian incompressible fluid in ALE formulation is given as follows.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{equation}\label{eq 2}
-\frac{d}{dt} + (u \cdot \nabla)u = - \grad p + \nu \laplacian u
-\frac{d}{dt}(\int_{V(t)}^{}{\rho \detV})+ \int_{S(t)}^{}{\rho (U-U_{g}).n \detS} = 0
-F_D = 6\pi \mu a u
-\end{equation}
+\begin{align}
+%  {\frac{d}{dt}\int_{V(t)}\rho dV+\int_{S(t)}\rho(U-U_{g}).\vec{n} dS}=0 
+ \frac{\partial{u_{j}}}{\partial{x_{i}}} & = 0\\
+ \frac{\partial{u_{i}}}{\partial{t}}+\left(u_{i}-v_{g,i}\right)\frac{\partial{u_{i}}}{\partial{x_{j}}} &= \frac{1}{\rho}\frac{\partial{p}}{\partial{x_{i}}}+\nu\frac{\partial^2{u_{i}}}{\partial{x_{j}}\partial{x_{j}}}-\frac{\partial{\tau_{ij}}}{\partial{x_{j}}}\\
+ \frac{1}{J}\frac{\partial{J}}{\partial{t}}-\frac{\partial{v_{g,i}}}{\partial{x_{i}}} & = 0
+\end{align}\\
+The equations presented are \textit{conservation of mass},\textit{conservation of momentum} and \textit{Space Conservation Law} (proposed by \citet{demirdvzic1988space}) in ALE formulation in order to account for the moving grid representation. Here $ v_{g} $ is the grid cell velocity and $J$ is the determinant of the metric tensor. Numerical treatment of these equations are presented in {refer to the relevant section}.
 
-\begin{equation}\label{eq:1}
-\frac{d}{dt} \int_{V(t)}^{}{\rho \detV}+ \int_{S(t)}^{}{\rho (U-U_{g}).n \detS} = 0
-\end{equation}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Coupling of fluid and structural solvers}
+
+The FSI problem in this study is solved by a \textit{semi-implicit predictor corrector} coupling scheme, which is a strong coupling method between fluid and structural solver. Details about this scheme is explained in \citet{breuer2012fluid}, summary of this scheme is presented in brief as follows:
+\begin{enumerate}[(a)]
+ \item At the start of the time step, the displacement of the structure is predicted based on values from the previous time step.
+ \item A predictor corrector approach is implemented to solve for conservation of momentum and mass (velocity $u_{i}$ and pressure $p$). This is explained in detail in section {refer to relevant section}
+ \item The calculated forces are then tranferred to the Computational Structural Dynamics (CSD) solver. Generalized-$\alpha$ method is used to solve the conservation equations of the structural solver. This is explained in detail in section {refer to relevant section}.
+ \item The FSI-subiterations are performed until desired structural and fluid convergence is achieved for a particular time step. Dynamic calculation of the under-relaxation factor is used to enhance the convergence{refer to relevant section}. The corrector step takes the predicted velocity $\star{u}_{i}$ as approximation to obtain the new corrected velocity $u_{i}$ and pressure $p$. 
+ \item Mesh adaptation for each FSI-subiteration is performed, based on transfinite interpolation by \citet{thompson1985numerical}. A comprehensive implementation can be found in \citet{munsch2011numerical}. 
+\end{enumerate}
+\par
+The predcitor-corrector algorithm for a strongly coupled, partitioned FSI solver is represented in the flowchart \ref{fig:2.6}
+
+\begin{figure}[h]
+ \includegraphics[height=3.5in]{p-c}
+ \caption{Flowchart representing the predictor-corrector coupling scheme to solve a strongly coupled, partitioned FSI solver \citet{munsch2011numerical}}
+ \label{fig:2.6}
+\end{figure}
+
+\subsubsection*{Convergence of the FSI sub-iterations}
+As explained in flowchart \ref{fig:2.6} for an implicitly coupled, partitioned FSI solver, the flow field is determined in the actual flow geometry. From this, the friction and pressure forces on the
+interacting walls are computed. These are passed to the structural solver as boundary conditions. The structural solver computes the deformations, with which then the fluid mesh is modified. Afterwards the flow solver is started again. 
+
+The FSI sub-iteration loop is repeated until a convergence criteria $\epsilon$ is satisfied, which is determined by the change in displacements,
+
+ 
+
+ 
+ 
 
 
 

@@ -24,13 +24,25 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{subcaption}
+\usepackage{enumerate}
 \usepackage{fancybox}
 \graphicspath{{images/}}
 
-% Math stuff
+% Math and equation stuff
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{nicefrac}
+\usepackage{physics} % for equations
+
+%additional packages
+\usepackage{booktabs, multirow, array, makecell, caption} % for certain commands used in excelToLatex
+\usepackage{tikz} % for flowcharts
+\usepackage{pgfplots} % plots from file
+\usepackage{pgfplotstable} %plots from file
+\usetikzlibrary{shapes.geometric, arrows} % for flowcharts
+\usepackage{xcolor} % for coloured symbols
+\usepackage{titlesec}
+\usepackage{cite}
 
 % Code listings
 \usepackage{listings}
@@ -104,8 +116,8 @@
 \fancyhead[RE]{\rightmark}
 
 % No indent for paragraphs
-\setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
-\setlength{\parindent}{1pt}
+%\setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
+%\setlength{\parindent}{0pt}
 
 % A few commands
 \newcommand{\term}[1]{\textit{#1}}
