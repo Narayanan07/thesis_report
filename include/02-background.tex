@@ -168,12 +168,34 @@ The predcitor-corrector algorithm for a strongly coupled, partitioned FSI solver
 
 \subsubsection*{Convergence of the FSI sub-iterations}
 As explained in flowchart \ref{fig:2.6} for an implicitly coupled, partitioned FSI solver, the flow field is determined in the actual flow geometry. From this, the friction and pressure forces on the
-interacting walls are computed. These are passed to the structural solver as boundary conditions. The structural solver computes the deformations, with which then the fluid mesh is modified. Afterwards the flow solver is started again. 
+interacting walls are computed. These are boundary conditions to the structural solver. The structural solver computes the deformations, with which the fluid mesh is then modified. Afterwards the flow solver is started again. 
 
-The FSI sub-iteration loop is repeated until a convergence criteria $\epsilon$ is satisfied, which is determined by the change in displacements,
+The FSI sub-iteration loop is repeated until a convergence criteria $\epsilon$ is satisfied, which is determined by the variation of the mean displacements \ref{eqn:2.4}.
 
- 
+\begin{equation}\label{eqn:2.4}
+\frac{1}{N}\sum_{n=1}^{k}\frac{\norm{\mathbf{d}_{i-1}^{n}-\mathbf{d}_{i}^{n}}^2}{\norm{\mathbf{d}_{i}^{n}-\mathbf{d}_{i}^{n-1}}^2}<\epsilon
+\end{equation}
 
+In order to accelerate the rate of convergence, a relaxation factor is added to the displacement and force values. The resulting displacement is computed from the current sub-iteration displacement value and displacement value from the last sub-iteration. Under-relaxation of the displacements are done as given by the equation \ref{eqn:2.5}, where $\mathbf{\alpha}$ represents the under-relaxation factor.
+
+\begin{equation}\label{eqn:2.5}
+\mathbf{d}_{i}^{n}=\mathbf{d}_{i-1}^{n}+\mathbf{\alpha}\left(\tilde{\mathbf{d}}_{i}^{n}-\mathbf{d}_{i}^{n-1}\right)
+\end{equation} 
+
+Relaxation of the interface displacements is synonymous to the line search step of the non-linear solver. There are different methods to calculate the under-relaxation parameter. The most simplest method is by using a \textit{constant under-relaxation parameter} for all time-steps. There are various methods available now to determine the under-relaxation parameter dynamically, however the presented study focuses on \textit{Aitken relaxation method} and relaxation via the method of \textit{steepest descent}. An introduction to these methods is presented below.
+
+\begin{enumerate}[(i)]
+ \item Constant under-relaxation method: The most simplest and ineffective method is to choose a constant $\mathbf{\alpha}$ for all time-steps. The relaxation parameter has to be small enough to keep the iteration from diverging, but as large as possible in order to use as much of the new solution as possible and to avoid unnecessary FSI iterations. The optimal $\mathbf{\alpha}$ value is problem specific and not known a priori. Furthermore even the optimal fixed value could lead to more iterations than a suitable dynamic relaxation parameter.
+ \item Aitken relaxation method: It is an effective and cheap method to calculate the under-relaxation parameter dynamically. The central idea of Aitken's $\bigtriangleup^2$ method is to use values from two previous iterations to improve the current solution, proposed by \citet{irons1969version}. The aitken factor $\mathbf{\mu}$ \ref{eqn:2.6} is calculated from the displacement values, and the under-relaxation factor $\mathbf{\alpha}$ is calculated as given in the equation \ref{eqn:2.9} \citet{mok2001partitioned}. This method has been implemented and validated with many FSI applications \citet{{kuttler2008fixed},{irons1969version}} .(Refer some more papers which uses aitken) The relaxation parameter calculation is valid in every FSI sub-iteration step. This method requires values from two previous sub-iterations, thus the relaxation parameter can be calculated after the first FSI sub-iteration. In the presented study the aitken factor from last time-step is used as an initial value for the current time-step $\left(\mathbf{\mu}_{i_{max}}^{n} = \mathbf{\mu}_{1}^{n+1}\right)$ as proposed by \citet{irons1969version}.      
+\end{enumerate}
+\begin{align}\label{eqn:2.6}
+\mu_{i}^{n+1} &= \mu_{i-1}^{n+1}+\left(\mu_{i-1}^{n+1}-1\right)\frac{\left(\Delta\mathbf{d}_{i}^{n+1}-\Delta\mathbf{d}_{i+1}^{n+1}\right)^{T}\Delta\mathbf{d}_{i+1}^{n+1}}{\left(\Delta\mathbf{d}_{i}^{n+1}-\Delta\mathbf{d}_{i+1}^{n+1}\right)^{T}\left(\Delta\mathbf{d}_{i}^{n+1}-\Delta\mathbf{d}_{i+1}^{n+1}\right)}\\
+\mathbf{d}_{i}^{n+1} &= \mathbf{d}_{i-1}^{n+1}-\mathbf{d}_{i}^{n+1}\\
+\mathbf{d}_{i+1}^{n+1} &= \mathbf{d}_{i}^{n+1}-\tilde{\mathbf{d}}_{i+1}^{n+1}
+\end{align}  
+\begin{equation}\label{eqn:2.9}
+\alpha_{i} = 1-\mu_{i}^{n+1}
+\end{equation}
  
  
 
