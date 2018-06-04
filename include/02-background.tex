@@ -69,9 +69,9 @@ The equations governing the fluid flow and the displacement/deformation of the s
 \end{figure}
 
  \subsubsection*{Partitioned solver approach}
-Another approach to fluid-structure interaction is to use two distinct solvers to model both fluid and solid domains. This technique allows the coupling of the fluid and solid solution by maintaining suitable coupling conditions. The interfacial conditions are used explicitly to communicate information between the fluid and structure solutions.\\
+Another approach to fluid-structure interaction is to use two distinct solvers to model both fluid and solid domains. This technique allows the coupling of the fluid and solid solution by maintaining suitable coupling conditions. The interface conditions are used explicitly to communicate information between the fluid and structure solutions.\\
 
-Some coupling algorithms were suggested by various studies (\citet{{piperno1995partitioned},{felippa2001partitioned},{farhat2000two}}) which allows for reuse of existing codes that have been developed for each field. This approach is very robust and can be used for wide variety of applications. The major disadvantage of this approach is that, the interface location that divides the fluid and the structure domains is not known a priori and usually changes in time. Thus, the partitioned approach requires tracking of the new interface location and its related quantities, which can be cumbersome and error-prone. The interface coupling conditions that are as stated below, have to be satisfied in order to have a stable solution.
+Some coupling algorithms were suggested by various studies (\citet{{piperno1995partitioned},{felippa2001partitioned},{farhat2000two}}) which allows for reuse of existing codes that have been developed for each field. This approach is very robust and can be used for wide variety of applications. The major disadvantage of this approach is that, the interface location that divides the fluid and the structure domains is not known a-priori and usually changes in time. Thus, the partitioned approach requires tracking of the new interface location and its related quantities, which can be cumbersome and error-prone. The interface coupling conditions that are as stated below, have to be satisfied in order to have a stable solution.
 
 \begin{itemize}
 \item Kinematic coupling condition: The displacements, velocities and accelerations of the sub-zones have to be equal at the interface at any point in time.
@@ -167,36 +167,53 @@ The predcitor-corrector algorithm for a strongly coupled, partitioned FSI solver
 \end{figure}
 
 \subsubsection*{Convergence of the FSI sub-iterations}
-As explained in flowchart \ref{fig:2.6} for an implicitly coupled, partitioned FSI solver, the flow field is determined in the actual flow geometry. From this, the friction and pressure forces on the
-interacting walls are computed. These are boundary conditions to the structural solver. The structural solver computes the deformations, with which the fluid mesh is then modified. Afterwards the flow solver is started again. 
+As explained in flowchart \ref{fig:2.6} for an implicitly coupled, partitioned FSI solver, the flow field is determined in the actual flow geometry. From this, the friction and pressure forces on the interacting walls are computed. These are boundary conditions to the structural solver. The structural solver computes the deformations, with which the fluid mesh is then modified. Afterwards the flow solver is started again. 
 
 The FSI sub-iteration loop is repeated until a convergence criteria $\epsilon$ is satisfied, which is determined by the variation of the mean displacements \ref{eqn:2.4}.
 
 \begin{equation}\label{eqn:2.4}
-\frac{1}{N}\sum_{n=1}^{k}\frac{\norm{\mathbf{d}_{i-1}^{n}-\mathbf{d}_{i}^{n}}^2}{\norm{\mathbf{d}_{i}^{n}-\mathbf{d}_{i}^{n-1}}^2}<\epsilon
+\frac{1}{N}\sum_{n=1}^{k}\frac{\norm{\mathbf{d}_{i}^{n+1}-\mathbf{d}_{i+1}^{n+1}}^2}{\norm{\mathbf{d}_{i+1}^{n+1}-\mathbf{d}_{i+1}^{n}}^2}<\epsilon
 \end{equation}
 
-In order to accelerate the rate of convergence, a relaxation factor is added to the displacement and force values. The resulting displacement is computed from the current sub-iteration displacement value and displacement value from the last sub-iteration. Under-relaxation of the displacements are done as given by the equation \ref{eqn:2.5}, where $\mathbf{\alpha}$ represents the under-relaxation factor.
+In order to accelerate the rate of convergence, a relaxation factor is added to the displacement and force values. The resulting displacement is computed from the current sub-iteration displacement value and displacement value from the last sub-iteration. Under-relaxation of the displacements are done as given by the equation \ref{eqn:2.5}, where $\mathbf{\omega}$ represents the under-relaxation factor.
 
 \begin{equation}\label{eqn:2.5}
-\mathbf{d}_{i}^{n}=\mathbf{d}_{i-1}^{n}+\mathbf{\alpha}\left(\tilde{\mathbf{d}}_{i}^{n}-\mathbf{d}_{i}^{n-1}\right)
+\mathbf{d}_{i+1}^{n+1}=\mathbf{d}_{i}^{n+1}+\mathbf{\omega_{i}}\left(\tilde{\mathbf{d}}_{i+1}^{n+1}-\mathbf{d}_{i}^{n+1}\right)
 \end{equation} 
 
 Relaxation of the interface displacements is synonymous to the line search step of the non-linear solver. There are different methods to calculate the under-relaxation parameter. The most simplest method is by using a \textit{constant under-relaxation parameter} for all time-steps. There are various methods available now to determine the under-relaxation parameter dynamically, however the presented study focuses on \textit{Aitken relaxation method} and relaxation via the method of \textit{steepest descent}. An introduction to these methods is presented below.
 
 \begin{enumerate}[(i)]
- \item Constant under-relaxation method: The most simplest and ineffective method is to choose a constant $\mathbf{\alpha}$ for all time-steps. The relaxation parameter has to be small enough to keep the iteration from diverging, but as large as possible in order to use as much of the new solution as possible and to avoid unnecessary FSI iterations. The optimal $\mathbf{\alpha}$ value is problem specific and not known a priori. Furthermore even the optimal fixed value could lead to more iterations than a suitable dynamic relaxation parameter.
- \item Aitken relaxation method: It is an effective and cheap method to calculate the under-relaxation parameter dynamically. The central idea of Aitken's $\bigtriangleup^2$ method is to use values from two previous iterations to improve the current solution, proposed by \citet{irons1969version}. The aitken factor $\mathbf{\mu}$ \ref{eqn:2.6} is calculated from the displacement values, and the under-relaxation factor $\mathbf{\alpha}$ is calculated as given in the equation \ref{eqn:2.9} \citet{mok2001partitioned}. This method has been implemented and validated with many FSI applications \citet{{kuttler2008fixed},{irons1969version}} .(Refer some more papers which uses aitken) The relaxation parameter calculation is valid in every FSI sub-iteration step. This method requires values from two previous sub-iterations, thus the relaxation parameter can be calculated after the first FSI sub-iteration. In the presented study the aitken factor from last time-step is used as an initial value for the current time-step $\left(\mathbf{\mu}_{i_{max}}^{n} = \mathbf{\mu}_{1}^{n+1}\right)$ as proposed by \citet{irons1969version}.      
-\end{enumerate}
+ \item Constant under-relaxation method: The most simplest and ineffective method is to choose a constant $\mathbf{\omega}$ for all time-steps. The relaxation parameter has to be small enough to keep the iteration from diverging, but as large as possible in order to use as much of the new solution as possible and to avoid unnecessary FSI iterations. The optimal $\mathbf{\omega}$ value is problem specific and not known a priori. Furthermore even the optimal fixed value could lead to more iterations than a suitable dynamic relaxation parameter.
+ \item Aitken relaxation method: It is an effective and cheap method to calculate the under-relaxation parameter dynamically. The central idea of Aitken's $\Delta^2$ method is to use values from two previous iterations to improve the current solution, proposed by \citet{irons1969version}. The aitken factor $\mathbf{\mu}$ \ref{eqn:2.6} is calculated from the displacement values, and the under-relaxation factor $\mathbf{\omega}$ is calculated as given in the equation \ref{eqn:2.9} \citet{mok2001partitioned}. This method has been implemented and validated with many FSI applications \citet{{kuttler2008fixed},{irons1969version}} .(Refer some more papers which uses aitken) The relaxation parameter calculation is valid in every FSI sub-iteration step. This method requires values from two previous sub-iterations, thus the relaxation parameter can be calculated after the first FSI sub-iteration. In the presented study the aitken factor from last time-step is used as an initial value for the current time-step $\left(\mathbf{\mu}_{i_{max}}^{n} = \mathbf{\mu}_{1}^{n+1}\right)$ as proposed by \citet{irons1969version}.      
 \begin{align}\label{eqn:2.6}
-\mu_{i}^{n+1} &= \mu_{i-1}^{n+1}+\left(\mu_{i-1}^{n+1}-1\right)\frac{\left(\Delta\mathbf{d}_{i}^{n+1}-\Delta\mathbf{d}_{i+1}^{n+1}\right)^{T}\Delta\mathbf{d}_{i+1}^{n+1}}{\left(\Delta\mathbf{d}_{i}^{n+1}-\Delta\mathbf{d}_{i+1}^{n+1}\right)^{T}\left(\Delta\mathbf{d}_{i}^{n+1}-\Delta\mathbf{d}_{i+1}^{n+1}\right)}\\
-\mathbf{d}_{i}^{n+1} &= \mathbf{d}_{i-1}^{n+1}-\mathbf{d}_{i}^{n+1}\\
-\mathbf{d}_{i+1}^{n+1} &= \mathbf{d}_{i}^{n+1}-\tilde{\mathbf{d}}_{i+1}^{n+1}
+\mu_{i}^{n+1} = \mu_{i-1}^{n+1}+\left(\mu_{i-1}^{n+1}-1\right)\frac{\left(\Delta\mathbf{d}_{i}^{n+1}-\Delta\mathbf{d}_{i+1}^{n+1}\right)^{T}\Delta\mathbf{d}_{i+1}^{n+1}}{\left(\Delta\mathbf{d}_{i}^{n+1}-\Delta\mathbf{d}_{i+1}^{n+1}\right)^{T}\left(\Delta\mathbf{d}_{i}^{n+1}-\Delta\mathbf{d}_{i+1}^{n+1}\right)}\\
+\mathbf{d}_{i}^{n+1} = \mathbf{d}_{i-1}^{n+1}-\mathbf{d}_{i}^{n+1}\\
+\mathbf{d}_{i+1}^{n+1} = \mathbf{d}_{i}^{n+1}-\tilde{\mathbf{d}}_{i+1}^{n+1}
 \end{align}  
 \begin{equation}\label{eqn:2.9}
-\alpha_{i} = 1-\mu_{i}^{n+1}
+\mathbf{\alpha}_{i} = 1-\mu_{i}^{n+1}
 \end{equation}
+ \item Steepest-Descent method: The best relaxation parameter possible is the one that finds the optimal step length in $r_{i+1}^{n+1}$ direction. In order to obtain that, the existence of a merit function $\varphi$ is assumed, that is minimal at the solution $d_{i+1}^{n+1}$ and sufficiently smooth, such that the relaxation parameter $\mathbf{\omega}_{i}$ is given by equation \ref{eqn:2.10}. By Taylor's series expansion and assumption of connection between the merit function and interface residual, the final expression for the relaxation parameter is given by the equation \ref{eqn:2.11}. The steps in obtaining this expression is explained clearly in \citet{kuttler2008fixed}.
  
+ \begin{equation}\label{eqn:2.10}
+  \mathbf{\omega_{i}} = arg \min_{\mathbf{\omega}_{i}} \varphi(d_{i}^{n+1}+\omega_{i}r_{i+1}^{n+1})
+ \end{equation}
+ 
+ \begin{equation}\label{eqn:2.11}
+  \mathbf{\omega_{i}} = -\frac{\left(\mathbf{r}_{i+1}^{n+1}\right)^T\left(\mathbf{r}_{i+1}^{n+1}\right)}{\left(\mathbf{r}_{i+1}^{n+1}\right)^T\mathbf{J}\left(\mathbf{r}_{i+1}^{n+1}\right)} 
+ \end{equation}\\
+  In the equation \ref{eqn:2.11},$\mathbf{J}$ represents the Jacobian matrix of the interface residual $\left(\mathbf{J} = \varphi^{"}(\mathbf{d}_{i}^{n+1})\right)$. This interface Jacobian is not readily available, there are methods to obtain the matrix vector product which can be performed with black-box solvers \citet{kuttler2008fixed}. In the presented study, the matrix vector product is obtained by means of Finite-Difference method as expressed in equation \ref{eqn:2.12}.
+ 
+ \begin{align}\label{eqn:2.12}
+   \mathbf{J}\mathbf{r}_{i+1}^{n+1} &= \frac{\mathbf{fsi_{sub}}\left(\mathbf{d}_{i}^{n+1}+\delta\mathbf{r}_{i+1}^{n+1}\right)-\mathbf{d}_{i}^{n+1}-\delta\mathbf{r}_{i+1}^{n+1}-\mathbf{r}_{i+1}^{n+1}}{\delta}\\
+   \delta &= \lambda\left(\lambda+\frac{\abs{\mathbf{d}_{i}^{n+1}}}{\abs{\mathbf{r}_{i+1}^{n+1}}}\right) 
+ \end{align}\\
+ A small $\lambda$ is assumed in the study, this method requires one more fsi-sub iteration cycle in order to evaluate the interface Jacobian. The computational costs for this method is slightly higher. 
+ \end{enumerate} 
+ 
+\section{Flow separation and vortex shedding}
+The presence of the fluid viscosity slows down the fluid particles very close to the solid surface and forms a thin slow-moving fluid layer called a boundary layer. The flow velocity is zero at the solid surface to satisfy the no-slip boundary condition. Inside the boundary layer, flow momentum is quite low since it experiences a strong viscous flow resistance. Therefore, the boundary layer flow is sensitive to the external pressure gradient (as the form of a pressure force acting upon fluid particles). If the pressure decreases in the direction of the flow, the pressure gradient is said to be favorable. In this case, the pressure force can assist the fluid movement and there is no flow retardation. However, if the pressure is increasing in the direction of the flow, an adverse pressure gradient condition exists. In addition to the presence of a strong viscous force, the fluid particles now have to move against the increasing pressure force. Therefore, the fluid particles could be stopped or reversed, causing the neighboring particles to move away from the surface. This phenomenon is called the boundary layer separation or flow separation. 
  
 
 
