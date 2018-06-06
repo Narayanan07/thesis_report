@@ -213,8 +213,26 @@ Relaxation of the interface displacements is synonymous to the line search step 
  \end{enumerate} 
  
 \section{Flow separation and vortex shedding}
-The presence of the fluid viscosity slows down the fluid particles very close to the solid surface and forms a thin slow-moving fluid layer called a boundary layer. The flow velocity is zero at the solid surface to satisfy the no-slip boundary condition. Inside the boundary layer, flow momentum is quite low since it experiences a strong viscous flow resistance. Therefore, the boundary layer flow is sensitive to the external pressure gradient (as the form of a pressure force acting upon fluid particles). If the pressure decreases in the direction of the flow, the pressure gradient is said to be favorable. In this case, the pressure force can assist the fluid movement and there is no flow retardation. However, if the pressure is increasing in the direction of the flow, an adverse pressure gradient condition exists. In addition to the presence of a strong viscous force, the fluid particles now have to move against the increasing pressure force. Therefore, the fluid particles could be stopped or reversed, causing the neighboring particles to move away from the surface. This phenomenon is called the boundary layer separation or flow separation. 
+The presence of the fluid viscosity slows down the fluid particles very close to the solid surface and forms a thin slow-moving fluid layer called a boundary layer. The flow velocity is zero at the solid surface to satisfy the no-slip boundary condition. Inside the boundary layer, flow momentum is quite low since it experiences a strong viscous flow resistance. Therefore, the boundary layer flow is sensitive to the external pressure gradient (as the form of a pressure force acting upon fluid particles). If the pressure decreases in the direction of the flow, the pressure gradient is said to be favorable. In this case, the pressure force can assist the fluid movement and there is no flow retardation. However, if the pressure is increasing in the direction of the flow, an adverse pressure gradient condition exists. In addition to the presence of a strong viscous force, the fluid particles now have to move against the increasing pressure force. Therefore, the fluid particles could be stopped or reversed, causing the neighboring particles to move away from the surface. This phenomenon is called the boundary layer separation or flow separation.\\
+In fig.\ref{fig:2.7} there exists a pressure gradient $\frac{\partial{p}}{\partial{x}}<0$ to accelerate the fluid along the surface $x$ from D to E and a gradient $\frac{\partial{p}}{\partial{x}}>0$ to decelerate the fluid between E and F. Potential energy (PE) in the pressure field is converted to kinetic energy between D and E, then fully back to PE between E and F, because there is no source of dissipation in an inviscid fluid.\\
  
+\begin{figure}[h]
+ \centering
+ \includegraphics[height=3.5in]{pressure_fpac}
+ \caption{Pressure field and separation point for flow past a cylinder.}
+ \label{fig:2.7}
+\end{figure}
+
+In the inviscid region, the fluid momentum is sufficient to overcome the adverse pressure gradient barrier and reach point F with the same kinetic energy as at point D. However, inside the boundary layer (near the surface of the cylinder) energy is dissipated by the viscous drag. As the momentum is smaller near the wall than in the regions closer to the free stream, a fluid particle on the boundary layer can not overcome the pressure barrier and comes to a standstill and eventually gets pushed backwards into motion by the pressure distribution of the outer flow. This continuous retardation of the flow brings the wall shear stress $\tau_{w}$ to zero at the point S on the wall as shown in figure \ref{fig:2.8} . The shear stress starts to become negative after the point S, which is the separation point. The boundary layer separation point is given by the mathematical relationship in equation \ref{eqn:2.13}.
+\begin{equation}\label{eqn:2.13}
+ \tau_{w} = \mu\left(\frac{\partial{u}}{\partial{y}}\right)
+\end{equation}
+\begin{figure}[h]
+ \centering
+ \includegraphics[height=3in]{advpressure}
+ \caption{point of separation and Wall Shear stress,ref \citet{schlichting1955boundary}}
+ \label{fig:2.8}
+\end{figure}
 
 
 

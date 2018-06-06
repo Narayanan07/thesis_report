@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -111,6 +111,13 @@ Thomas Richter.
 \newblock A monolithic multigrid solver for 3d fluid-structure interaction
   problems.
 \newblock 2010.
+
+\bibitem[Schlichting et~al.(1955)Schlichting, Gersten, Krause, Oertel, and
+  Mayes]{schlichting1955boundary}
+Hermann Schlichting, Klaus Gersten, Egon Krause, Herbert Oertel, and Katherine
+  Mayes.
+\newblock \emph{Boundary-layer theory}, volume~7.
+\newblock Springer, 1955.
 
 \bibitem[Thompson et~al.(1985)Thompson, Warsi, and
   Mastin]{thompson1985numerical}
