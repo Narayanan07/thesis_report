@@ -258,16 +258,59 @@ In the case of a cylinder treated as an elastically mounted spring-damper-mass s
 \begin{equation}\label{eqn:2.15}
  m\ddot{y}+d\dot{y}+ky = F_{y}
 \end{equation}
-In the above equation, $y$,$\dot{y}$,$\ddot{y}$ represents the displacement, velocity and acceleration components in the direction of lift force respectively. $m$,$d$ and $k$ represents the structural mass, damping co-efficient and spring constant of the system. These parameters are defined by the reduced damping parameter $S_{g} = 8\pi^2S_{t}^2M^\star$, which represents the vibration amplitude and was proposed by  \citet{griffin1992vortex}. The mass ratio $M^\star$ is a dimensionless parameter which is the ratio of structural mass to mass of the fluid. $M^{\star}=\frac{m_{s}}{\rho\mathbf{D^{2}}\mathbf{h}}$ where $m_{s}$ represents the structural mass of the cylinder. The \textit{Strouhal number} $S_{t}$ is a dimensionless number which normalizes the Vortex shedding frequency $f_{s}$ and is given by, $S_{t}=\frac{f_{s}D}{U_{\infty}}$. From the studies of \citet{zhou1999vortex}, the strouhal number of a fixed cylinder at Re=200 is found to be 0.195. The same value has been considered for this present study. The calculations of the relevant parameters is presented in the subsequent section.
+In the above equation, $y$,$\dot{y}$,$\ddot{y}$ represents the displacement, velocity and acceleration components in the direction of lift force respectively. $m$,$d$ and $k$ represents the structural mass, damping co-efficient and spring stiffness constant of the system. These parameters are defined by the reduced damping parameter $S_{g} = 8\pi^2S_{t}^2M^\star$, which represents the vibration amplitude and was proposed by  \citet{griffin1992vortex}. The mass ratio $M^\star$ is a dimensionless parameter which is the ratio of structural mass to mass of the fluid. $M^{\star}=\frac{m_{s}}{\rho\mathbf{D^{2}}\mathbf{h}}$ where $m_{s}$ represents the structural mass of the cylinder. The \textit{Strouhal number} $S_{t}$ is a dimensionless number which normalizes the Vortex shedding frequency $f_{s}$ and is given by, $S_{t}=\frac{f_{s}D}{U_{\infty}}$. From the studies of \citet{zhou1999vortex}, the strouhal number of a fixed cylinder at Re=200 is found to be 0.195. The same value has been considered for this present study. The calculations of the relevant parameters is presented in the subsequent section.
 \subsection{Calculation of parameters influencing the vortex induced vibrations}
 \begin{enumerate}[(a)]
-\item Structural Mass: The structural mass $m_{s}$ is given by the general mass formula:\\
+\item Structural Mass $m_{s}$: The structural mass $m_{s}$ is given by the general mass formula:\\
   \begin{align}
-  \mathbf{m_{s}} =  \rho\frac{1}{4}\pi\mathbf{D^{2}}\mathbf{L}
+  {m_{s}} =  \rho\frac{1}{4}\pi{D^{2}}{L}
   \end{align}
   where $\rho$, L and D represents the density, length and diameter of the cylinder. In the present study,$\rho=1kg/m^{3}$, L=D=1$m$, hence $m_s=\frac{\pi}{4} kg$.
-\item 
+\item Spring Stiffness constant $k$: The stiffness constant of the system is defined by the equation:\\
+ \begin{align}
+ {k} = {m_{eff}}{\omega}_{n}^{2}\\
+ \omega_{n} = 2{\pi}{f_{n}}\\
+ {k} = {m_{eff}}\left(2\pi{f_{s}}\right)^2
+ \end{align}
+where $\omega_{n}$ represents the natural angular frequency of the system and $m_{eff}$ is the effective mass which is the sum of structural mass and fluid mass. The frequency ratio $\left(\frac{f_{n}}{f_{s}}\right)$ of $1$ is considered in this present study.
+\item Damping co-efficient $d$: The damping co-efficient of the spring-mass-damper system is calculated from the reduced damping parameter $S_{g}$, which is defined by the equation \ref{eqn:2.20}.\\
+ \begin{equation}\label{eqn:2.20}
+ {d} = \frac{S_{g}}{8{\pi}^2{S_{t}}^2{M}^*}
+ \end{equation}   
 \end{enumerate}
+
+The response of the system is studied for a Mass ratio $M^*$ of 1 and different reduced damping parameter $S_{g}$. Table \ref{table:2.1} represents the parameters calculated for different $S_{g}$, replicating the work of \citet{zhou1999vortex}.\\
+
+%\begin{center}
+ \begin{table}[H]
+ \begin{centering}
+  \begin{tabular}[c]{|c|c|c|c|}
+ %\caption{Spring stiffness co-efficient and damping co-efficient calculated for $M^*=1$ and different $S_{g}$ values.\label{table:2.1}}
+   \hline
+ %\multirow{2}{*}{Parameters} & \multicolumn{3}{|c|}{M*=1}\\\cline{2-4}
+   \multirow{4}{4em}{$M^{*}=1$} & $S_{g}$ & $k[N/m]$ & $d[kg/s]$\\\cline{2-4}
+ %\hline
+  %S_{g}=0.01 & S_{g}=0.1 & S_{g}=1\\[0.5ex]
+ %\hline
+ %k & 2.6802 & 2.6802 & 2.6802\\
+   & 0.01 & 2.6802 & 0.0033 \\ \cline{2-4}
+   & 0.1 & 2.6802 & 0.0333 \\ \cline{2-4}
+   & 1 & 2.6802 & 0.3331 \\ 
+   \hline
+% d & 0.0033 & 0.0333 & 0.3331\\
+ %\hline 
+ %\caption{Spring stiffness co-efficient and damping co-efficient calculated for $M^*=1$ and different $S_{g}$ values.}
+ %\label{table:2.1}
+  \end{tabular}
+ \caption{Spring stiffness co-efficient and damping co-efficient calculated for $M^*=1$ and different $S_{g}$ values.}
+ \label{table:2.1}
+ \end{centering}
+ \end{table}
+ %\end{center}
+\section{Artificial Neural Network}
+The artificial neural network is implemented in this study.
+
+
       
  
 

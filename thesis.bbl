@@ -1,4 +1,4 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{27}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -41,6 +41,25 @@ Carlos~A Felippa, KC~Park, and Charbel Farhat.
 \newblock Partitioned analysis of coupled mechanical systems.
 \newblock \emph{Computer methods in applied mechanics and engineering},
   190\penalty0 (24-25):\penalty0 3247--3270, 2001.
+
+\bibitem[Feng(1968)]{feng1968measurement}
+CC~Feng.
+\newblock \emph{The measurement of vortex induced effects in flow past
+  stationary and oscillating circular and d-section cylinders}.
+\newblock PhD thesis, University of British Columbia, 1968.
+
+\bibitem[Griffin(1980)]{griffin1980vortex}
+OM~Griffin.
+\newblock Vortex-excited cross-flow vibrations of a single cylindrical tube.
+\newblock \emph{Journal of Pressure Vessel Technology}, 102\penalty0
+  (2):\penalty0 158--166, 1980.
+
+\bibitem[Griffin(1992)]{griffin1992vortex}
+OM~Griffin.
+\newblock Vortex-induced vibrations of marine structures in uniform and sheared
+  currents.
+\newblock In \emph{NSF Workshop on Riser Dynamics}. University of Michigan,
+  1992.
 
 \bibitem[Hou et~al.(2012)Hou, Wang, and Layton]{hou2012numerical}
 Gene Hou, Jin Wang, and Anita Layton.
@@ -157,5 +176,18 @@ EH~Van~Brummelen, SJ~Hulshoff, and R~De~Borst.
   interaction problems.
 \newblock \emph{Computer Methods in Applied Mechanics and Engineering},
   192\penalty0 (25):\penalty0 2727--2748, 2003.
+
+\bibitem[Williamson(1991)]{williamson19912}
+CHK Williamson.
+\newblock 2-d and 3-d aspects of the wake of a cylinder, and their relation to
+  wake computations.
+\newblock \emph{Lectures of Appl. Maths., Am. Math. Soc.}, 28:\penalty0 719,
+  1991.
+
+\bibitem[Zhou et~al.(1999)Zhou, So, and Lam]{zhou1999vortex}
+CY~Zhou, RMC So, and K~Lam.
+\newblock Vortex-induced vibrations of an elastic circular cylinder.
+\newblock \emph{Journal of Fluids and Structures}, 13\penalty0 (2):\penalty0
+  165--189, 1999.
 
 \end{thebibliography}
