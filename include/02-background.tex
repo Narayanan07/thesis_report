@@ -308,9 +308,36 @@ The response of the system is studied for a Mass ratio $M^*$ of 1 and different 
  \end{table}
  %\end{center}
 \section{Artificial Neural Network}
-The artificial neural network is implemented in this study.
+The simplest definition of a neural network, more properly referred to as an 'artificial' neural network (ANN), is provided by the inventor of one of the first neurocomputers, Dr. Robert Hecht-Nielsen.\\
+\textit{"A computing system made up of a number of simple, highly interconnected processing elements, which process information by their dynamic state response to external inputs"},reference \citet{caudill1987neural}\\
+An ANN is built upon the principle of a biological \textit{neuron}, which has \textit{dendrites} to receive signals, a \textit{cell body} to process them and an \textit{axon} to communicate the signals to the other neurons. Similarly ANNs are made up of layers, it can have a number of \textit{input layers}, a processing layer mostly referred to as \textit{hidden layers} and an \textit{output layer}. Figure \ref{fig:2.10} expresses the similarity between the biological neuron and an ANN.\\
+\begin{figure}[h]
+ \centering
+ \includegraphics[height=3in]{ANN}
+ \caption{Representation of a biological Neuron and an Artificial Neural Network}
+ \label{fig:2.10}
+\end{figure}
+Neural networks are typically organized in layers. Layers are made up of a number of interconnected neurons which contain an \textit{activation function}. Patterns are presented to the network via the \textit{input layer}, which communicates to one or more \textit{hidden layers} where the actual processing is done by a system of \textit{weighted connections}. The hidden layers then link the result to an \textit{output layer}. Each neuron element has a numeric threshold value. The neuron compares the effective weight to this threshold value. If the effective weight exceeds the threshold, the unit produces an output value of 1. If it does not exceed the threshold it produces an output of 0. The process of adjusting the weights an threshold values in a neural net is called \textbf{training}. A neural net is trained with significant data-set to produce the desired results. Figure \ref{fig:2.11} represents an example of weights and biases and an activation function.\\
+\begin{figure}[h]
+ \centering
+ \includegraphics[height=3in]{weights}
+ \caption{Representation of weights, biases and an activation function which constitutes the working of an Artificial Neural Network.}
+ \label{fig:2.11}
+\end{figure}
+\subsection{Activation Function}
+The activation function determines the output value of each neuron, it determines whether a particular neuron is activated or not. There are some common activation functions available which is discussed below.
+\begin{enumerate}[(i)]
+\item Perceptron: This was one of the first used activation functions, which is a step-function or a heavy-side function, that maps the real-valued vector input	to a single binary output value. Although it seemed promising in the beginning, it was later proved that Perceptron models were not able to recognize many classes of patterns.\\
+ \begin{figure}[h!]
+ \centering
+ \includegraphics[height=3in]{perceptron}
+ \caption{Typical function output of a Perceptron activation function}
+ \label{fig:2.12}
+ \end{figure}
+The function takes in the input value and if it matches a certain threshold value, the output is $1$, else the output is $0$. Figure \ref{fig:2.12} represents a typical function output of the Perceptron activation model.
 
-
+https://rubikscode.net/2017/11/20/common-neural-network-activation-functions/
+\end{enumerate}
       
  
 

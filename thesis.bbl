@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -22,6 +22,11 @@ Michael Breuer, Guillaume De~Nayer, Manuel M{\"u}nsch, Thomas Gallinger, and
   predictor--corrector coupling scheme for the application of large-eddy
   simulation.
 \newblock \emph{Journal of Fluids and Structures}, 29:\penalty0 107--130, 2012.
+
+\bibitem[Caudill(1987)]{caudill1987neural}
+Maureen Caudill.
+\newblock Neural networks primer, part i.
+\newblock \emph{AI expert}, 2\penalty0 (12):\penalty0 46--52, 1987.
 
 \bibitem[Demird{\v{z}}i{\'c} and Peri{\'c}(1988)]{demirdvzic1988space}
 I~Demird{\v{z}}i{\'c} and M~Peri{\'c}.
