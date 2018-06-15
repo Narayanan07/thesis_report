@@ -192,7 +192,7 @@ Relaxation of the interface displacements is synonymous to the line search step 
 \mathbf{d}_{i+1}^{n+1} = \mathbf{d}_{i}^{n+1}-\tilde{\mathbf{d}}_{i+1}^{n+1}
 \end{align}  
 \begin{equation}\label{eqn:2.9}
-\mathbf{\alpha}_{i} = 1-\mu_{i}^{n+1}
+\mathbf{\omega}_{i} = 1-\mu_{i}^{n+1}
 \end{equation}
  \item Steepest-Descent method: The best relaxation parameter possible is the one that finds the optimal step length in $r_{i+1}^{n+1}$ direction. In order to obtain that, the existence of a merit function $\varphi$ is assumed, that is minimal at the solution $d_{i+1}^{n+1}$ and sufficiently smooth, such that the relaxation parameter $\mathbf{\omega}_{i}$ is given by equation \ref{eqn:2.10}. By Taylor's series expansion and assumption of connection between the merit function and interface residual, the final expression for the relaxation parameter is given by the equation \ref{eqn:2.11}. The steps in obtaining this expression is explained clearly in \citet{kuttler2008fixed}.
  
@@ -308,7 +308,7 @@ The response of the system is studied for a Mass ratio $M^*$ of 1 and different 
  \end{table}
  %\end{center}
 \section{Artificial Neural Network}
-The simplest definition of a neural network, more properly referred to as an 'artificial' neural network (ANN), is provided by the inventor of one of the first neurocomputers, Dr. Robert Hecht-Nielsen.\\
+The simplest definition of a neural network, more properly referred to as an 'artificial' neural network (ANN), is provided by the inventor of one of the first neuro-computers, Dr. Robert Hecht-Nielsen.\\
 \textit{"A computing system made up of a number of simple, highly interconnected processing elements, which process information by their dynamic state response to external inputs"},reference \citet{caudill1987neural}\\
 An ANN is built upon the principle of a biological \textit{neuron}, which has \textit{dendrites} to receive signals, a \textit{cell body} to process them and an \textit{axon} to communicate the signals to the other neurons. Similarly ANNs are made up of layers, it can have a number of \textit{input layers}, a processing layer mostly referred to as \textit{hidden layers} and an \textit{output layer}. Figure \ref{fig:2.10} expresses the similarity between the biological neuron and an ANN.\\
 \begin{figure}[h]
@@ -324,12 +324,14 @@ Neural networks are typically organized in layers. Layers are made up of a numbe
  \caption{Representation of weights, biases and an activation function which constitutes the working of an Artificial Neural Network.}
  \label{fig:2.11}
 \end{figure}
-The Artificial Neural Networks are very versatile and have numerous applications. Based on their application, they are classified into various categories. According to \citet{klerfors1998artificial},  most applications of neural networks fall into the following five categories:\\
+The Artificial Neural Networks are very versatile and can be used for numerous applications. Based on their application, they are classified into various categories. According to \citet{jain1996artificial},  most applications of neural networks fall into the following categories:\\
 \begin{itemize}
-\item Prediction
-\item Classification
-\item Recognition
-\subsection{Activation Function}
+\item Pattern Classification: The task of pattern classification is to assign an input (speech or image) to pre-described classes. Classic examples are character recognition, speech recognition etc. 
+\item Clustering or Categorization: This particular type comes under \textit{unsupervised learning}, where there are no training data with classified labels. The network explores the similarity between the patterns and places similar patterns into a cluster. Examples include data mining, data compression etc.
+\item Prediction or Forecasting: From a set of time dependent samples, the network is trained to predict or forecast a sample at a future time frame. \textit{Stock market} and \textit{weather forecasting} are examples of this type.
+\item Optimization: This is one of the most widely used technique in variety of fields such as mathematics, science, statistics, medicine and economics. The goal of an optimization algorithm is to minimize or maximize an objective function.
+\end{itemize}
+\subsection{Learning of an Artificial Neural Network}
 The activation function determines the output value of each neuron, it determines whether a particular neuron is activated or not. There are some common activation functions available which is discussed below.
 \begin{enumerate}[(i)]
 \item Perceptron: This was one of the first used activation functions, which is a step-function or a heavy-side function, that maps the real-valued vector input	to a single binary output value. Although it seemed promising in the beginning, it was later proved that Perceptron models were not able to recognize many classes of patterns.\\
