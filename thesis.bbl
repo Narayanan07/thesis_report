@@ -1,4 +1,4 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{30}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -86,6 +86,11 @@ Bruce~M Irons and Robert~C Tuck.
 \newblock \emph{International Journal for Numerical Methods in Engineering},
   1\penalty0 (3):\penalty0 275--277, 1969.
 
+\bibitem[Jain et~al.(1996)Jain, Mao, and Mohiuddin]{jain1996artificial}
+Anil~K Jain, Jianchang Mao, and K~Moidin Mohiuddin.
+\newblock Artificial neural networks: A tutorial.
+\newblock \emph{Computer}, 29\penalty0 (3):\penalty0 31--44, 1996.
+
 \bibitem[K{\"u}ttler and Wall(2008)]{kuttler2008fixed}
 Ulrich K{\"u}ttler and Wolfgang~A Wall.
 \newblock Fixed-point fluid--structure interaction solvers with dynamic
@@ -159,6 +164,12 @@ Thomas Richter.
 \newblock A monolithic multigrid solver for 3d fluid-structure interaction
   problems.
 \newblock 2010.
+
+\bibitem[Rumelhart et~al.(1986)Rumelhart, Hinton, and
+  Williams]{rumelhart1986learning}
+David~E Rumelhart, Geoffrey~E Hinton, and Ronald~J Williams.
+\newblock Learning representations by back-propagating errors.
+\newblock \emph{nature}, 323\penalty0 (6088):\penalty0 533, 1986.
 
 \bibitem[Schlichting et~al.(1955)Schlichting, Gersten, Krause, Oertel, and
   Mayes]{schlichting1955boundary}

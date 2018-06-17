@@ -16,8 +16,10 @@
 \contentsline {section}{\numberline {2.4}Vortex Induced Vibrations}{13}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Calculation of parameters influencing the vortex induced vibrations}{15}{subsection.2.4.1}
 \contentsline {section}{\numberline {2.5}Artificial Neural Network}{16}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Activation Function}{18}{subsection.2.5.1}
-\contentsline {chapter}{\numberline {3}Implementation}{19}{chapter.3}
-\contentsline {chapter}{\numberline {4}Evaluation}{21}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{23}{chapter.5}
-\contentsline {chapter}{\nonumberline Bibliography}{25}{chapter*.19}
+\contentsline {subsection}{\numberline {2.5.1}Learning of an Artificial Neural Network}{18}{subsection.2.5.1}
+\contentsline {subsubsection}{Cost function}{18}{subsubsection*.17}
+\contentsline {subsubsection}{Back-propagation algorithm}{19}{subsubsection*.18}
+\contentsline {chapter}{\numberline {3}Implementation}{21}{chapter.3}
+\contentsline {chapter}{\numberline {4}Evaluation}{23}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{25}{chapter.5}
+\contentsline {chapter}{\nonumberline Bibliography}{27}{chapter*.21}

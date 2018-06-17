@@ -332,6 +332,50 @@ The Artificial Neural Networks are very versatile and can be used for numerous a
 \item Optimization: This is one of the most widely used technique in variety of fields such as mathematics, science, statistics, medicine and economics. The goal of an optimization algorithm is to minimize or maximize an objective function.
 \end{itemize}
 \subsection{Learning of an Artificial Neural Network}
+The learning of an ANN can be attributed as the problem of updating network architecture and connection weights	in order that the network can predict or perform a specified task. The network usually must learn the connection weights from available training patterns. Performance is improved over time by iteratively updating the weights in the network. There are primarily three types of learning:
+\begin{itemize}
+\item Supervised learning: The network is provided with the output for every input pattern and the weights are adjusted iteratively in order to achieve the desired output.
+\item Reinforcement learning: Reinforcement learning is a variant of supervised learning in which the network is provided with only a critique
+on the correctness of network outputs, not the correct answers themselves.
+\item Unsupervised learning: Unsupervised learning, does not require an exact output or target associated with each input pattern in the training data set. It explores the underlying structure in the data, or correlations between patterns in the data, and organizes patterns into categories from these correlations. Hybrid learning combines supervised and unsupervised learning. Part of the weights are usually determined through supervised learning, while the others are obtained through unsupervised learning.
+\end{itemize}
+In this study, the focus is on \textbf{Supervised learning}, where the deep neural network architecture is provided with inputs and associated targets.
+\subsubsection{Cost function}
+The neural network can be trained using batch gradient descent on a set of fixed training data $\{ (x^{(1)}, y^{(1)}), \ldots, (x^{(m)}, y^{(m)}) \}$. The cost-function of a single training data can be expressed as in equation \ref{eqn:2.21}.\\
+ \begin{equation}\label{eqn:2.21}
+ J(W,b; x,y) = \frac{1}{2} \left\| h_{W,b}(x) - y \right\|^2
+ \end{equation}
+The above equation represents a squared-error cost function $J(W,b; x,y)$, which is dependent on weights and biases of a single training data. For the set of $m$ examples, the overall cost-function is defined to be:\\
+ \begin{align}
+ J(W,b)
+ &= \left[ \frac{1}{m} \sum_{i=1}^m J(W,b;x^{(i)},y^{(i)}) \right]
+                       + \frac{\lambda}{2} \sum_{l=1}^{n_l-1} \; \sum_{i=1}^{s_l} \; \sum_{j=1}^{s_{l+1}} \left( W^{(l)}_{ji} \right)^2
+ \\
+&= \left[ \frac{1}{m} \sum_{i=1}^m \left( \frac{1}{2} \left\| h_{W,b}(x^{(i)}) - y^{(i)} \right\|^2 \right) \right]
+                       + \frac{\lambda}{2} \sum_{l=1}^{n_l-1} \; \sum_{i=1}^{s_l} \; \sum_{j=1}^{s_{l+1}} \left( W^{(l)}_{ji} \right)^2
+ \end{align}
+The first term in the above equation is an average sum-of-squares error term. The second term in the equation is a regularization term $\left(\lambda\right)$ also called as \textit{weight decay term}, which tends to decrease the magnitude of weights and helps prevent over-fitting. The primarily goal of learning of an ANN is to minimize the cost function $J(W,b)$ as a function of weights and biases. The \textbf{Back-propagation algorithm} proposed by \citet{rumelhart1986learning} is used to train the neural network model.
+\subsubsection{Back-propagation algorithm}
+In order to train a Deep Neural Network (An ANN with one or more hidden layers), the weights $W_{ij}^l$ connecting the nodes in layer $i$ to layer $j$ and corresponding biases $b_{i}^l$ needs to be randomly initialized to some value distributed around zero. Then an optimization algorithm such as \textit{steepest-descent method} or \textit{Marquardt levenberg algorithm} is applied. The \textit{back-propagation algorithm} can be applied only on \textit{Feed-Forward} or \textit{Multi Layer Perceptrons network}, and are ideal for Pattern Recognition and Regression models. The weights and biases of the network is updated backwards after an initial "forward pass". The algorithm is as described below:
+\begin{itemize}
+\item For a given training example $(x,y)$, a \textit{forward pass} to compute the activation throughout the network, including the output value of the hypothesis $h_{W,b}(x)$ is carried out. The activation for hidden layers $(L2,L3,\dots,L_{nl-1}$ and the output layer $L_{nl}$ is done during the forward pass. Here, $nl$ represents the output layer.
+\item For each node $i$ in layer $l$, an error term $\delta_{i}^{l}$ that quantifies the impact of a particular node on the errors in the output is defined. For an output node, the difference between the network's activation and the target value can be used to define $\delta_{i}^{nl}$.
+\begin{equation}
+\delta^{(n_l)}_i
+= \frac{\partial}{\partial z^{(n_l)}_i} \;\;
+        \frac{1}{2} \left\|y - h_{W,b}(x)\right\|^2 = - (y_i - a^{(n_l)}_i) \cdot f'(z^{(n_l)}_i)
+\end{equation}
+\item For the hidden layers, the computation of error term $\delta_{i}^{l}$ is based on a weighted average of the error terms of the nodes for a corresponding input node $a_i^{\left(nl\right)}$. For the hidden layers $l = n_l-1, n_l-2, n_l-3, \ldots, 2$ and for each node $i$ in layer $l$, set:
+\begin{equation}
+\delta^{(l)}_i = \left( \sum_{j=1}^{s_{l+1}} W^{(l)}_{ji} \delta^{(l+1)}_j \right) f'(z^{(l)}_i)
+\end{equation}
+\item After computing the error terms of all corresponding layers, the partial derivatives of the cost function is given by:
+\begin{align}
+\frac{\partial}{\partial W_{ij}^{(l)}} J(W,b; x, y) &= a^{(l)}_j \delta_i^{(l+1)} \\
+\frac{\partial}{\partial b_{i}^{(l)}} J(W,b; x, y) &= \delta_i^{(l+1)}.
+\end{align}
+\end{itemize}
+
 The activation function determines the output value of each neuron, it determines whether a particular neuron is activated or not. There are some common activation functions available which is discussed below.
 \begin{enumerate}[(i)]
 \item Perceptron: This was one of the first used activation functions, which is a step-function or a heavy-side function, that maps the real-valued vector input	to a single binary output value. Although it seemed promising in the beginning, it was later proved that Perceptron models were not able to recognize many classes of patterns.\\
