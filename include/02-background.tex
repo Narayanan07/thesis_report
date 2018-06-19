@@ -376,22 +376,67 @@ In order to train a Deep Neural Network (An ANN with one or more hidden layers),
 \end{align}
 \end{itemize}
 
-The activation function determines the output value of each neuron, it determines whether a particular neuron is activated or not. There are some common activation functions available which is discussed below.
+After the back-propagation algorithm, based on the optimizer the complete algorithm of update rule differs. The algorithm mentioned below is considering \textit{Stochastic Gradient Method} as an optimizer. One iteration of the batch gradient descent is as follows:
+\begin{itemize}
+\item Considering $\Delta W^{(l)}$ and $\Delta b^{(l)}$ in the same dimensions of weights and biases, set: $\Delta W^{(l)} := 0$ and $\Delta b^{(l)} := 0$ for all layers $l$. 
+\item For $i=1$ to $m$,
+  \begin{enumerate}[a)]
+   \item Back-propagation is done to obtain $\frac{\partial}{\partial W_{ij}^{(l)}} J(W,b; x, y)$ and $\frac{\partial}{\partial b_{i}^{(l)}} J(W,b; x, y)$.
+   \item Set $\Delta W^{(l)} := \Delta W^{(l)}+\frac{\partial}{\partial W_{ij}^{(l)}} J(W,b; x, y)$
+   \item Set $\Delta b^{(l)} := \Delta b^{(l)}+\frac{\partial}{\partial b_{i}^{(l)}} J(W,b; x, y)$
+  \end{enumerate}
+\item The weights and biases are updated:
+\begin{align}
+W^{(l)} &= W^{(l)} - \alpha \left[ \left(\frac{1}{m} \Delta W^{(l)} \right) + \lambda W^{(l)}\right] \\
+b^{(l)} &= b^{(l)} - \alpha \left[\frac{1}{m} \Delta b^{(l)}\right]
+\end{align}
+where $\alpha$ is the \textit{learning rate} of the network.
+\end{itemize}
+\subsection{Factors influencing the learning of a network}
+There are certain factors which influence the learning of a neural network. 
 \begin{enumerate}[(i)]
-\item Perceptron: This was one of the first used activation functions, which is a step-function or a heavy-side function, that maps the real-valued vector input	to a single binary output value. Although it seemed promising in the beginning, it was later proved that Perceptron models were not able to recognize many classes of patterns.\\
- \begin{figure}[h!]
- \centering
- \includegraphics[height=3in]{perceptron}
- \caption{Typical function output of a Perceptron activation function}
- \label{fig:2.12}
- \end{figure}
-The function takes in the input value and if it matches a certain threshold value, the output is $1$, else the output is $0$. Figure \ref{fig:2.12} represents a typical function output of the Perceptron activation model.
-\item Sigmoid function: 
+\item Choice of optimizer
+\item Activation function
+\item Learning rate
+\item Number of hidden layers
 \end{enumerate}
-      
- 
-
-
+\subsubsection{Choice of Optimizer}
+There are many optimizer methods available to minimize the \textit{cost-function} such as \textit{Stochastic Gradient Descent}, \textit{Momentum}, \textit{{Adagrad}, {Adadelta}, {RMSprop},{Adam}} and Newton's optimization method \textit{L-BFGS} etc. The choice of optimizer method is purely application oriented, and in the current study the optimizer selected is \textbf{adam}.
+\paragraph{Adam optimizer}
+This method is an update to the \textit{stochastic gradient descent} approach which uses single learning rate for all weight updates, whereas in Adam the learning rate is adaptive. Adam is short for \textit{"adaptive moment estimation} and was proposed by \citet{DBLP:journals/corr/KingmaB14}. This method combines the advantages of two methods \textit{AdaGrad} and \textit{RMSProp}. The simplified form of the algorithm proposed by \citet{DBLP:journals/corr/KingmaB14} is as follows:
+\begin{align}
+m &= \beta_{1}m + \left(1-\beta_{1}\right)dx\\
+v &= \beta_{2}v + \left(1-\beta_{2}\right)\left(dx^2\right)\\
+x &= x - \frac{\alpha m}{\sqrt{v}+eps}
+\end{align}
+where $m$ and $v$ are momentum vectors, and $x$ is the position or point along the descent direction. As per the study of \citet{DBLP:journals/corr/KingmaB14}, the recommended values for exponential decay rates $\beta_1$ and $beta_2$ are $0.9$ and $0.999$ respectively. The effectiveness of this method can be observed from figure \ref{fig:2.13} taken from their study.
+\begin{figure}[h]
+\centering
+\includegraphics[height=3in]{adam}
+\caption{Performance of various optimizer on MNIST images data-set, taken from \citet{DBLP:journals/corr/KingmaB14}}
+\label{fig:2.13}
+\end{figure}
+\subsubsection{Activation Function}
+The activation function determines the output value of each neuron, it determines whether a particular neuron is activated or not. \citet{duch1999survey} had proposed over 640 different activation functions. There are some common activation functions available such as \textit{Perceptron activation}, \textit{sigmoid function}, \textit{Rectified Linear Units (ReLU)} and \textit{hyperbolic tan function}. The purpose of an activation function in a deep neural network is to ensure that the representation in the input space is mapped to a different space in the output. A similarity function between the inputs and weights are performed by the neural network. In the current study \textbf{ReLU} activation function has been selected. 
+\paragraph{Rectified Linear Unit (ReLU) activation function:}
+This is the most widely used activation function, across various applications. The function $\sigma(x) = max(0,x)$ returns only positive values for any given input $x$. This function does not require any normalization as the values returned are either $0$ or positive.
+\begin{figure}[h]
+\centering
+\includegraphics[height=3in]{ReLU}
+\caption{Representation of ReLU function output values for different input values}
+\label{fig:2.13}
+\end{figure}    
+Figure \ref{fig:2.13} represents the functional behavior of a ReLU activation function.
+\subsubsection{Learning rate}    
+The learning rate has a direct impact on the loss function per epoch and ultimately the overall loss function of the training session. Low learning rates minimizes the loss linearly and it takes longer for the loss to decay to an acceptable value. High learning rates will decay the loss faster, however the overall loss value might be higher than the acceptable limit. Figure \ref{fig:2.14} depicts the effect of learning rate on training loss.
+\begin{figure}[h]
+\centering
+\includegraphics[height=3in]{learning_rate}
+\caption{Effect of learning rates on training loss}
+\label{fig:2.14}
+\end{figure}
+\subsubsection{Number of hidden layers}
+A deep neural network consists of one or more hidden layer units, in addition to the input and output layer. The hidden layers are required to fit the neural network model, $i.e$ to map any function from one finite space to another. No hidden layer can only represent a linearly separable function. However, the number of hidden layers is mostly application or problem specific and in this study 2 hidden layers are selected. Further number of hidden layers hinders the effectiveness of Back-propagation algorithm as the numerical error from one layer to the next and so on.  
 
 
 

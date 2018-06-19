@@ -1,4 +1,4 @@
-\begin{thebibliography}{30}
+\begin{thebibliography}{31}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -90,6 +90,12 @@ Bruce~M Irons and Robert~C Tuck.
 Anil~K Jain, Jianchang Mao, and K~Moidin Mohiuddin.
 \newblock Artificial neural networks: A tutorial.
 \newblock \emph{Computer}, 29\penalty0 (3):\penalty0 31--44, 1996.
+
+\bibitem[Kingma and Ba(2014)]{DBLP:journals/corr/KingmaB14}
+Diederik~P. Kingma and Jimmy Ba.
+\newblock Adam: {A} method for stochastic optimization.
+\newblock \emph{CoRR}, abs/1412.6980, 2014.
+\newblock URL \url{http://arxiv.org/abs/1412.6980}.
 
 \bibitem[K{\"u}ttler and Wall(2008)]{kuttler2008fixed}
 Ulrich K{\"u}ttler and Wolfgang~A Wall.
