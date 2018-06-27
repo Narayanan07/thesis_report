@@ -436,7 +436,30 @@ The learning rate has a direct impact on the loss function per epoch and ultimat
 \label{fig:2.14}
 \end{figure}
 \subsubsection{Number of hidden layers}
-A deep neural network consists of one or more hidden layer units, in addition to the input and output layer. The hidden layers are required to fit the neural network model, $i.e$ to map any function from one finite space to another. No hidden layer can only represent a linearly separable function. However, the number of hidden layers is mostly application or problem specific and in this study 2 hidden layers are selected. Further number of hidden layers hinders the effectiveness of Back-propagation algorithm as the numerical error from one layer to the next and so on.  
+A deep neural network consists of one or more hidden layer units, in addition to the input and output layer. The hidden layers are required to fit the neural network model, $i.e$ to map any function from one finite space to another. However, the number of hidden layers is mostly application or problem specific and in this study 2 hidden layers are selected. Further number of hidden layers hinders the effectiveness of Back-propagation algorithm as the numerical error from one layer to the next and so on.  
+
+The parameters used to build and train the Neural Network model is presented in the table \ref{table:2.2}.
+
+\begin{table}[H]
+ \centering
+	\begin{tabular}{|c|c|}
+	 \hline
+	 Network type & Multi Layer Perceptron model\\
+	 \hline
+	 Optimizer method & Adam optimizer\\
+	 \hline
+	 Activation function & ReLU\\
+	 \hline
+	 Learning rate & 0.001\\
+	 \hline
+	 Number of hidden layers & 2\\
+	 \hline
+	 Number of training epochs & 500\\
+	 \hline
+	\end{tabular}
+\caption{Features and parameters used to train the Tensorflow Neural Network model}
+\label{table:2.2}
+\end{table}
 
 
 

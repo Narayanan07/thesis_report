@@ -1,4 +1,4 @@
-\begin{thebibliography}{31}
+\begin{thebibliography}{32}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -33,6 +33,12 @@ I~Demird{\v{z}}i{\'c} and M~Peri{\'c}.
 \newblock Space conservation law in finite volume calculations of fluid flow.
 \newblock \emph{International journal for numerical methods in fluids},
   8\penalty0 (9):\penalty0 1037--1050, 1988.
+
+\bibitem[Duch and Jankowski(1999)]{duch1999survey}
+W{\l}odzis{\l}aw Duch and Norbert Jankowski.
+\newblock Survey of neural transfer functions.
+\newblock \emph{Neural Computing Surveys}, 2\penalty0 (1):\penalty0 163--212,
+  1999.
 
 \bibitem[Farhat and Lesoinne(2000)]{farhat2000two}
 Charbel Farhat and Michael Lesoinne.
