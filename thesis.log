@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.6.24)  10 JUL 2018 19:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.6.24)  13 JUL 2018 19:33
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -2621,26 +2621,27 @@ Class scrbook Warning: \float@addtolists detected!
 
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 11.
-
-Package natbib Warning: Citation `shannon_diff' on page 1 undefined on input li
-ne 23.
-
-
-Package natbib Warning: Citation `blowfish' on page 1 undefined on input line 2
-3.
-
-
-Package natbib Warning: Citation `shannon_diff' on page 1 undefined on input li
-ne 24.
-
-
-Package natbib Warning: Citation `blowfish' on page 1 undefined on input line 2
-5.
-
 [1
 
 
-]) [2]
+]
+
+Package natbib Warning: Citation `shannon_diff' on page 2 undefined on input li
+ne 25.
+
+
+Package natbib Warning: Citation `blowfish' on page 2 undefined on input line 2
+5.
+
+
+Package natbib Warning: Citation `shannon_diff' on page 2 undefined on input li
+ne 26.
+
+
+Package natbib Warning: Citation `blowfish' on page 2 undefined on input line 2
+7.
+
+) [2]
 \openout2 = `include/02-background.aux'.
 
  (include/02-background.tex
@@ -2970,15 +2971,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
 (include/04-evaluation.aux) (include/05-conclusion.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 6D4DA3A61C03DFB651C9E66C281A7453;1793.
 
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: 7FA142E1DA34F8ACE0D6FB54CBBF07C6;1768
-(rerunfilecheck)             After:  6D4DA3A61C03DFB651C9E66C281A7453;1793.
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -3011,7 +3006,7 @@ am Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utm
 r8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (42 pages, 1172930 bytes).
+Output written on thesis.pdf (42 pages, 1174142 bytes).
 PDF statistics:
  701 PDF objects out of 1000 (max. 8388607)
  204 named destinations out of 1000 (max. 500000)
