@@ -1,32 +1,28 @@
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Need for dynamic relaxation methods}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Task}{2}{section.1.2}
-\contentsline {section}{\numberline {1.3}Related Work}{2}{section.1.3}
-\contentsline {section}{\numberline {1.4}Results}{2}{section.1.4}
-\contentsline {section}{\numberline {1.5}Outline}{2}{section.1.5}
-\contentsline {section}{\numberline {1.6}Acknowledgments}{2}{section.1.6}
-\contentsline {chapter}{\numberline {2}Theoretical background}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Fluid-Structure Interaction}{3}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Numerical simulation strategies of FSI problems}{4}{subsection.2.1.1}
-\contentsline {subsubsection}{Classification based on numerical solution approaches}{5}{subsubsection*.6}
-\contentsline {subsection}{\numberline {2.1.2}Classification based on meshing strategies}{7}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}Governing equations of fluid flow and structural deformations}{8}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Coupling of fluid and structural solvers}{9}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}Flow separation and vortex shedding}{12}{section.2.3}
-\contentsline {section}{\numberline {2.4}Vortex Induced Vibrations}{13}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Calculation of parameters influencing the vortex induced vibrations}{15}{subsection.2.4.1}
-\contentsline {section}{\numberline {2.5}Artificial Neural Network}{16}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Learning of an Artificial Neural Network}{18}{subsection.2.5.1}
-\contentsline {subsubsection}{Cost function}{18}{subsubsection*.17}
-\contentsline {subsubsection}{Back-propagation algorithm}{19}{subsubsection*.18}
-\contentsline {subsection}{\numberline {2.5.2}Factors influencing the learning of a network}{20}{subsection.2.5.2}
-\contentsline {subsubsection}{Choice of Optimizer}{21}{subsubsection*.19}
-\contentsline {paragraph}{Adam optimizer}{21}{paragraph*.20}
-\contentsline {subsubsection}{Activation Function}{22}{subsubsection*.22}
-\contentsline {paragraph}{Rectified Linear Unit (ReLU) activation function:}{22}{paragraph*.23}
-\contentsline {subsubsection}{Learning rate}{22}{subsubsection*.25}
-\contentsline {subsubsection}{Number of hidden layers}{23}{subsubsection*.27}
-\contentsline {chapter}{\numberline {3}Implementation}{25}{chapter.3}
-\contentsline {chapter}{\numberline {4}Evaluation}{27}{chapter.4}
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Need for dynamic relaxation methods}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Thesis objective}{4}{section.1.2}
+\contentsline {chapter}{\numberline {2}Theoretical background}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Fluid-Structure Interaction}{5}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Numerical simulation strategies of FSI problems}{6}{subsection.2.1.1}
+\contentsline {subsubsection}{Classification based on numerical solution approaches}{7}{subsubsection*.9}
+\contentsline {subsection}{\numberline {2.1.2}Classification based on meshing strategies}{9}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Governing equations of fluid flow and structural deformations}{10}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Coupling of fluid and structural solvers}{11}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Flow separation and vortex shedding}{14}{section.2.3}
+\contentsline {section}{\numberline {2.4}Vortex Induced Vibrations}{15}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Calculation of parameters influencing the vortex induced vibrations}{17}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.5}Artificial Neural Network}{18}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Learning of an Artificial Neural Network}{20}{subsection.2.5.1}
+\contentsline {subsubsection}{Cost function}{20}{subsubsection*.20}
+\contentsline {subsubsection}{Back-propagation algorithm}{21}{subsubsection*.21}
+\contentsline {subsection}{\numberline {2.5.2}Factors influencing the learning of a network}{22}{subsection.2.5.2}
+\contentsline {subsubsection}{Choice of Optimizer}{23}{subsubsection*.22}
+\contentsline {paragraph}{Adam optimizer}{23}{paragraph*.23}
+\contentsline {subsubsection}{Activation Function}{24}{subsubsection*.25}
+\contentsline {paragraph}{Rectified Linear Unit (ReLU) activation function:}{24}{paragraph*.26}
+\contentsline {subsubsection}{Learning rate}{24}{subsubsection*.28}
+\contentsline {subsubsection}{Number of hidden layers}{25}{subsubsection*.30}
+\contentsline {chapter}{\numberline {3}Implementation}{26}{chapter.3}
+\contentsline {chapter}{\numberline {4}Evaluation}{28}{chapter.4}
 \contentsline {chapter}{\numberline {5}Conclusion and Future Work}{29}{chapter.5}
-\contentsline {chapter}{\nonumberline Bibliography}{31}{chapter*.30}
+\contentsline {chapter}{\nonumberline Bibliography}{30}{chapter*.33}

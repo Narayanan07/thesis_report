@@ -27,13 +27,17 @@
 \pagenumbering{alph}
 
 % Title
+\let\cleardoublepage\clearpage
 \include{include/00-1-title}
+
 
 % Roman page numbers
 \pagenumbering{roman}
 
 % Pre content
+\let\cleardoublepage\clearpage
 \include{include/00-2-declaration}
+\let\cleardoublepage\clearpage
 \include{include/00-3-abstract}
 
 % Table of Contents
@@ -43,20 +47,28 @@
 \tableofcontents
 \end{onehalfspacing}
 \cleardoublepage
-
+\let\cleardoublepage\clearpage
+\listoffigures
+\listoftables
+\let\cleardoublepage\clearpage
 % Arabic page numbers
 \pagenumbering{arabic}
 
 
 % Actual content, can be split up into multiple files or kept in
 % one big file
+
 \fancyhead[RE]{\leftmark}
+
 \include{include/01-introduction}
 \fancyhead[RE]{\rightmark}
-
+\let\cleardoublepage\clearpage
 \include{include/02-background}
+\let\cleardoublepage\clearpage
 \include{include/03-implementation}
+\let\cleardoublepage\clearpage
 \include{include/04-evaluation}
+\let\cleardoublepage\clearpage
 
 \fancyhead[RE]{\leftmark}
 \include{include/05-conclusion}

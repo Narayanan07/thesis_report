@@ -1,4 +1,4 @@
-\begin{thebibliography}{32}
+\begin{thebibliography}{36}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -13,6 +13,12 @@ P.~Becker, S.~R. Idelsohn, and E.~O{\~{n}}ate.
 \newblock \emph{Computational Mechanics}, 55\penalty0 (6):\penalty0 1091--1104,
   dec 2014.
 \newblock \doi{10.1007/s00466-014-1107-0}.
+
+\bibitem[Bogaers et~al.(2014)Bogaers, Kok, Reddy, and Franz]{bogaers2014quasi}
+Alfred~EJ Bogaers, Schalk Kok, B~Dayanand Reddy, and Thierry Franz.
+\newblock Quasi-newton methods for implicit black-box fsi coupling.
+\newblock \emph{Computer Methods in Applied Mechanics and Engineering},
+  279:\penalty0 113--132, 2014.
 
 \bibitem[Breuer et~al.(2012)Breuer, De~Nayer, M{\"u}nsch, Gallinger, and
   W{\"u}chner]{breuer2012fluid}
@@ -197,6 +203,13 @@ Joe~F Thompson, Zahir~UA Warsi, and C~Wayne Mastin.
   volume~45.
 \newblock North-holland Amsterdam, 1985.
 
+\bibitem[Vald{\'e}s et~al.(2016)Vald{\'e}s, O{\~n}ate, and
+  Miquel]{valdes2016nonlinear}
+Jesus~Gerardo Vald{\'e}s, Eugenio O{\~n}ate, and J~Miquel.
+\newblock Nonlinear analysis of orthotropic membrane and shell structures
+  including fluid-structure interaction.
+\newblock 2016.
+
 \bibitem[Van~Brummelen et~al.(2003)Van~Brummelen, Hulshoff, and
   De~Borst]{van2003energy}
 EH~Van~Brummelen, SJ~Hulshoff, and R~De~Borst.
@@ -205,12 +218,28 @@ EH~Van~Brummelen, SJ~Hulshoff, and R~De~Borst.
 \newblock \emph{Computer Methods in Applied Mechanics and Engineering},
   192\penalty0 (25):\penalty0 2727--2748, 2003.
 
+\bibitem[Wall et~al.(1999)Wall, Mok, and Ramm]{wall1999partitioned}
+Wolfgang~A Wall, Daniel~P Mok, and Ekkehard Ramm.
+\newblock Partitioned analysis approach of the transient coupled response of
+  viscous fluids and flexible structures.
+\newblock In \emph{Solids, structures and coupled problems in engineering,
+  proceedings of the European conference on computational mechanics ECCM},
+  volume~99, 1999.
+
 \bibitem[Williamson(1991)]{williamson19912}
 CHK Williamson.
 \newblock 2-d and 3-d aspects of the wake of a cylinder, and their relation to
   wake computations.
 \newblock \emph{Lectures of Appl. Maths., Am. Math. Soc.}, 28:\penalty0 719,
   1991.
+
+\bibitem[Yigit et~al.(2007)Yigit, Sternel, and
+  Sch{\"a}fer]{yigit2007efficiency}
+Saim Yigit, DD~Sternel, and M~Sch{\"a}fer.
+\newblock Efficiency of fluid-structure interaction simulations with adaptive
+  underrelaxation and multigrid acceleration.
+\newblock \emph{The International Journal of Multiphysics}, 1\penalty0 (1),
+  2007.
 
 \bibitem[Zhou et~al.(1999)Zhou, So, and Lam]{zhou1999vortex}
 CY~Zhou, RMC So, and K~Lam.
