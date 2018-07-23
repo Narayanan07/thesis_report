@@ -22,7 +22,10 @@
 \contentsline {paragraph}{Rectified Linear Unit (ReLU) activation function:}{24}{paragraph*.26}
 \contentsline {subsubsection}{Learning rate}{24}{subsubsection*.28}
 \contentsline {subsubsection}{Number of hidden layers}{25}{subsubsection*.30}
-\contentsline {chapter}{\numberline {3}Implementation}{26}{chapter.3}
-\contentsline {chapter}{\numberline {4}Evaluation}{28}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{29}{chapter.5}
-\contentsline {chapter}{\nonumberline Bibliography}{30}{chapter*.33}
+\contentsline {chapter}{\numberline {3}Implementation of the task}{26}{chapter.3}
+\contentsline {section}{\numberline {3.1}Numerical treatment of the governing equations}{26}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Coordinate transform}{26}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Finite Volume discretization method}{31}{section.3.2}
+\contentsline {chapter}{\numberline {4}Evaluation}{33}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{34}{chapter.5}
+\contentsline {chapter}{\nonumberline Bibliography}{35}{chapter*.34}

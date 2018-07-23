@@ -9,12 +9,11 @@ A level-1 auxiliary file: include/04-evaluation.aux
 A level-1 auxiliary file: include/05-conclusion.aux
 The style file: plainnat.bst
 Database file #1: thesis.bib
-Warning--I didn't find a database entry for "shannon_diff"
-Warning--I didn't find a database entry for "blowfish"
 Warning--empty journal in laroussivortex
 Warning--empty year in laroussivortex
 Warning--empty year in laroussivortex
 Warning--empty journal in munsch2015entwicklung
+Warning--empty journal in peric1985finite
 Warning--empty journal in Richter
 Warning--empty journal in valdes2016nonlinear
-(There were 8 warnings)
+(There were 7 warnings)

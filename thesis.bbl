@@ -1,4 +1,4 @@
-\begin{thebibliography}{36}
+\begin{thebibliography}{39}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -45,6 +45,11 @@ W{\l}odzis{\l}aw Duch and Norbert Jankowski.
 \newblock Survey of neural transfer functions.
 \newblock \emph{Neural Computing Surveys}, 2\penalty0 (1):\penalty0 163--212,
   1999.
+
+\bibitem[Durst(2008)]{durst2008fluid}
+Franz Durst.
+\newblock \emph{Fluid mechanics: an introduction to the theory of fluid flows}.
+\newblock Springer Science \& Business Media, 2008.
 
 \bibitem[Farhat and Lesoinne(2000)]{farhat2000two}
 Charbel Farhat and Michael Lesoinne.
@@ -109,6 +114,14 @@ Diederik~P. Kingma and Jimmy Ba.
 \newblock \emph{CoRR}, abs/1412.6980, 2014.
 \newblock URL \url{http://arxiv.org/abs/1412.6980}.
 
+\bibitem[Kumar(2005)]{kumar2005modeling}
+Vivek Kumar.
+\newblock \emph{Modeling and Numerical Simulations of Complex Transport
+  Phenomena in Crystal Growth Processes: Modellierung und Numerische
+  Simulationen Komplexer Transportvorg{\"a}nge in
+  Kristallz{\"u}chtungsprozessen}.
+\newblock Shaker, 2005.
+
 \bibitem[K{\"u}ttler and Wall(2008)]{kuttler2008fixed}
 Ulrich K{\"u}ttler and Wolfgang~A Wall.
 \newblock Fixed-point fluid--structure interaction solvers with dynamic
@@ -160,6 +173,12 @@ Michio Nishioka and Hiroshi Sato.
   behind a cylinder at low reynolds numbers.
 \newblock \emph{Journal of Fluid Mechanics}, 89\penalty0 (1):\penalty0 49--60,
   1978.
+
+\bibitem[Peric(1985)]{peric1985finite}
+Milovan Peric.
+\newblock A finite volume method for the prediction of three-dimensional fluid
+  flow in complex ducts.
+\newblock 1985.
 
 \bibitem[Piperno et~al.(1995)Piperno, Farhat, and
   Larrouturou]{piperno1995partitioned}
