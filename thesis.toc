@@ -25,7 +25,22 @@
 \contentsline {chapter}{\numberline {3}Implementation of the task}{26}{chapter.3}
 \contentsline {section}{\numberline {3.1}Numerical treatment of the governing equations}{26}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Coordinate transform}{26}{subsection.3.1.1}
-\contentsline {section}{\numberline {3.2}Finite Volume discretization method}{31}{section.3.2}
-\contentsline {chapter}{\numberline {4}Evaluation}{33}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{34}{chapter.5}
-\contentsline {chapter}{\nonumberline Bibliography}{35}{chapter*.34}
+\contentsline {section}{\numberline {3.2}Finite Volume method to solve the Navier Stokes equation}{31}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Formulation of Arbitrary Lagrangian-Eulerian equation}{32}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Discretization schemes for the terms in Navier Stokes equation}{33}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Discretization of convective fluxes}{33}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Discretization of diffusive fluxes and source term}{34}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Time discretization scheme}{34}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Discretization of Space Conservation Law}{35}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Mass conservation (Pressure-Velocity coupling)}{36}{subsection.3.3.5}
+\contentsline {subsubsection}{Pressure Poisson equation}{37}{subsubsection*.35}
+\contentsline {section}{\numberline {3.4}Discretization of the structural governing equation}{37}{section.3.4}
+\contentsline {chapter}{\numberline {4}Results and Discussion}{40}{chapter.4}
+\contentsline {section}{\numberline {4.1}Computational Grid}{41}{section.4.1}
+\contentsline {section}{\numberline {4.2}Results of flow analysis}{41}{section.4.2}
+\contentsline {section}{\numberline {4.3}FSI simulation results}{46}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Determining a suitable constant value of URF}{47}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Results for case 1: M=1 and Sg=1}{47}{subsection.4.3.2}
+\contentsline {subsubsection}{Without a restart file}{48}{subsubsection*.45}
+\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{50}{chapter.5}
+\contentsline {chapter}{\nonumberline Bibliography}{51}{chapter*.48}

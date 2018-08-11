@@ -1,0 +1,30 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 1.1}{\ignorespaces Representation of a spring-mass-damper system\relax }}{4}{figure.caption.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Representational figure of Fluid-Structure Interaction domain,taken from \citet {Richter}\relax }}{6}{figure.caption.7}
+\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Representational figure of one-way \ref {fig:2.2a}, and two-way \ref {fig:2.2b} fluid-structure interaction domains,taken from \citet {Richter}\relax }}{6}{figure.caption.8}
+\contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces Schematic representation of Monolithic and Partitioned solution approaches. $ S^{f} $ represents the fluid solver and $ S^{s} $ represents the structural solver for two successive time steps current $ (t_{n}) $ and next $(t_{n+1})$. Figure taken from \citet {hou2012numerical}\relax }}{8}{figure.caption.10}
+\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces Representational sketch of explicit coupling \ref {fig:2.4a}, and implicit coupling \ref {fig:2.4b} approaches to solving partitioned, fluid-structure interaction problems,taken from \citet {munsch2015entwicklung}\relax }}{9}{figure.caption.11}
+\contentsline {figure}{\numberline {\relax 2.5}{\ignorespaces Examples of Conforming mesh \ref {fig:2.5a} and Non-conforming mesh \ref {fig:2.5b} methods, taken from \citet {hou2012numerical}.\relax }}{10}{figure.caption.12}
+\contentsline {figure}{\numberline {\relax 2.6}{\ignorespaces Flowchart representing the predictor-corrector coupling scheme to solve a strongly coupled, partitioned FSI solver \citet {munsch2011numerical}\relax }}{12}{figure.caption.13}
+\contentsline {figure}{\numberline {\relax 2.7}{\ignorespaces Pressure field and separation point for flow past a cylinder.\relax }}{15}{figure.caption.14}
+\contentsline {figure}{\numberline {\relax 2.8}{\ignorespaces point of separation and Wall Shear stress,ref \citet {schlichting1955boundary}\relax }}{16}{figure.caption.15}
+\contentsline {figure}{\numberline {\relax 2.9}{\ignorespaces Vortex formation and shedding phenomenon, ref \citet {laroussivortex}\relax }}{16}{figure.caption.16}
+\contentsline {figure}{\numberline {\relax 2.10}{\ignorespaces Representation of a biological Neuron and an Artificial Neural Network\relax }}{18}{figure.caption.18}
+\contentsline {figure}{\numberline {\relax 2.11}{\ignorespaces Representation of weights, biases and an activation function which constitutes the working of an Artificial Neural Network.\relax }}{19}{figure.caption.19}
+\contentsline {figure}{\numberline {\relax 2.12}{\ignorespaces Performance of various optimizer on MNIST images data-set, taken from \citet {DBLP:journals/corr/KingmaB14}\relax }}{23}{figure.caption.24}
+\contentsline {figure}{\numberline {\relax 2.13}{\ignorespaces Representation of ReLU function output values for different input values\relax }}{24}{figure.caption.27}
+\contentsline {figure}{\numberline {\relax 2.14}{\ignorespaces Effect of learning rates on training loss\relax }}{25}{figure.caption.29}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Representation of coordinate transformation from Cartesian physical space (left) to a curvilinear orthogonal computational space (right), figure taken from \citet {munsch2015entwicklung}\relax }}{27}{figure.caption.32}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Representational control volume in the computational domain, picture taken from \citet {munsch2015entwicklung}\relax }}{31}{figure.caption.33}
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Representation of change in control volume due to the grid movement\relax }}{36}{figure.caption.34}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Left: Grids colored by blocks of parallelization; Right: Grid highlighted with inlet (Green) and outlet(Red) patches\relax }}{41}{figure.caption.37}
+\contentsline {figure}{\numberline {\relax 4.2}{\ignorespaces Instantaneous velocity contour\relax }}{43}{figure.caption.39}
+\contentsline {figure}{\numberline {\relax 4.3}{\ignorespaces Instantaneous pressure contour\relax }}{44}{figure.caption.40}
+\contentsline {figure}{\numberline {\relax 4.4}{\ignorespaces Variation of Lift and Drag coefficients\relax }}{45}{figure.caption.41}
+\contentsline {figure}{\numberline {\relax 4.5}{\ignorespaces Variation of Drag and Lift coefficients for case 1 without any restart\relax }}{48}{figure.caption.46}
+\contentsline {figure}{\numberline {\relax 4.6}{\ignorespaces Variation of displacements vs time\relax }}{49}{figure.caption.47}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

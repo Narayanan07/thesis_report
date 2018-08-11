@@ -16,7 +16,20 @@
 \BOOKMARK [0][-]{chapter.3}{3 Implementation of the task}{}% 16
 \BOOKMARK [1][-]{section.3.1}{3.1 Numerical treatment of the governing equations}{chapter.3}% 17
 \BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Coordinate transform}{section.3.1}% 18
-\BOOKMARK [1][-]{section.3.2}{3.2 Finite Volume discretization method}{chapter.3}% 19
-\BOOKMARK [0][-]{chapter.4}{4 Evaluation}{}% 20
-\BOOKMARK [0][-]{chapter.5}{5 Conclusion and Future Work}{}% 21
-\BOOKMARK [0][-]{chapter*.34}{Bibliography}{}% 22
+\BOOKMARK [1][-]{section.3.2}{3.2 Finite Volume method to solve the Navier Stokes equation}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Formulation of Arbitrary Lagrangian-Eulerian equation}{section.3.2}% 20
+\BOOKMARK [1][-]{section.3.3}{3.3 Discretization schemes for the terms in Navier Stokes equation}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.3.1}{3.3.1 Discretization of convective fluxes}{section.3.3}% 22
+\BOOKMARK [2][-]{subsection.3.3.2}{3.3.2 Discretization of diffusive fluxes and source term}{section.3.3}% 23
+\BOOKMARK [2][-]{subsection.3.3.3}{3.3.3 Time discretization scheme}{section.3.3}% 24
+\BOOKMARK [2][-]{subsection.3.3.4}{3.3.4 Discretization of Space Conservation Law}{section.3.3}% 25
+\BOOKMARK [2][-]{subsection.3.3.5}{3.3.5 Mass conservation \(Pressure-Velocity coupling\)}{section.3.3}% 26
+\BOOKMARK [1][-]{section.3.4}{3.4 Discretization of the structural governing equation}{chapter.3}% 27
+\BOOKMARK [0][-]{chapter.4}{4 Results and Discussion}{}% 28
+\BOOKMARK [1][-]{section.4.1}{4.1 Computational Grid}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.2}{4.2 Results of flow analysis}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.3}{4.3 FSI simulation results}{chapter.4}% 31
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Determining a suitable constant value of URF}{section.4.3}% 32
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Results for case 1: M=1 and Sg=1}{section.4.3}% 33
+\BOOKMARK [0][-]{chapter.5}{5 Conclusion and Future Work}{}% 34
+\BOOKMARK [0][-]{chapter*.48}{Bibliography}{}% 35

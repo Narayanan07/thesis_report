@@ -1,0 +1,13 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {\relax 2.1}{\ignorespaces Spring stiffness co-efficient and damping co-efficient calculated for $M^*=1$ and different $S_{g}$ values.\relax }}{18}{table.caption.17}
+\contentsline {table}{\numberline {\relax 2.2}{\ignorespaces Features and parameters used to train the Tensorflow Neural Network model\relax }}{25}{table.caption.31}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {\relax 4.1}{\ignorespaces Laminar flow properties and the diameter of the cylinder considered\relax }}{40}{table.caption.36}
+\contentsline {table}{\numberline {\relax 4.2}{\ignorespaces Boundary conditions considered for the simulation\relax }}{42}{table.caption.38}
+\contentsline {table}{\numberline {\relax 4.3}{\ignorespaces Characteristic values of lift and drag forces\relax }}{46}{table.caption.42}
+\contentsline {table}{\numberline {\relax 4.4}{\ignorespaces Summary of the various cases simulated\relax }}{46}{table.caption.43}
+\contentsline {table}{\numberline {\relax 4.5}{\ignorespaces Average number of sub iterations per time step\relax }}{47}{table.caption.44}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

@@ -1,4 +1,4 @@
-\begin{thebibliography}{39}
+\begin{thebibliography}{43}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -33,6 +33,13 @@ Michael Breuer, Guillaume De~Nayer, Manuel M{\"u}nsch, Thomas Gallinger, and
 Maureen Caudill.
 \newblock Neural networks primer, part i.
 \newblock \emph{AI expert}, 2\penalty0 (12):\penalty0 46--52, 1987.
+
+\bibitem[Chung and Hulbert(1993)]{chung1993time}
+Jintai Chung and GM~Hulbert.
+\newblock A time integration algorithm for structural dynamics with improved
+  numerical dissipation: the generalized-$\alpha$ method.
+\newblock \emph{Journal of applied mechanics}, 60\penalty0 (2):\penalty0
+  371--375, 1993.
 
 \bibitem[Demird{\v{z}}i{\'c} and Peri{\'c}(1988)]{demirdvzic1988space}
 I~Demird{\v{z}}i{\'c} and M~Peri{\'c}.
@@ -107,6 +114,11 @@ Bruce~M Irons and Robert~C Tuck.
 Anil~K Jain, Jianchang Mao, and K~Moidin Mohiuddin.
 \newblock Artificial neural networks: A tutorial.
 \newblock \emph{Computer}, 29\penalty0 (3):\penalty0 31--44, 1996.
+
+\bibitem[Khosla and Rubin(1974)]{khosla1974diagonally}
+PK~Khosla and SG~Rubin.
+\newblock A diagonally dominant second-order accurate implicit scheme.
+\newblock \emph{Computers \& Fluids}, 2\penalty0 (2):\penalty0 207--209, 1974.
 
 \bibitem[Kingma and Ba(2014)]{DBLP:journals/corr/KingmaB14}
 Diederik~P. Kingma and Jimmy Ba.
@@ -245,12 +257,24 @@ Wolfgang~A Wall, Daniel~P Mok, and Ekkehard Ramm.
   proceedings of the European conference on computational mechanics ECCM},
   volume~99, 1999.
 
+\bibitem[Williamson(1996)]{williamson1996vortex}
+Charles~HK Williamson.
+\newblock Vortex dynamics in the cylinder wake.
+\newblock \emph{Annual review of fluid mechanics}, 28\penalty0 (1):\penalty0
+  477--539, 1996.
+
 \bibitem[Williamson(1991)]{williamson19912}
 CHK Williamson.
 \newblock 2-d and 3-d aspects of the wake of a cylinder, and their relation to
   wake computations.
 \newblock \emph{Lectures of Appl. Maths., Am. Math. Soc.}, 28:\penalty0 719,
   1991.
+
+\bibitem[Williamson(1980)]{williamson1980low}
+JH~Williamson.
+\newblock Low-storage runge-kutta schemes.
+\newblock \emph{Journal of Computational Physics}, 35\penalty0 (1):\penalty0
+  48--56, 1980.
 
 \bibitem[Yigit et~al.(2007)Yigit, Sternel, and
   Sch{\"a}fer]{yigit2007efficiency}
