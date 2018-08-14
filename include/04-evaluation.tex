@@ -352,6 +352,8 @@ All the values are non-dimensionalized in order to have a comparison with the wo
 \subsubsection{Without a restart file}
 In this simulation, the cylinder is suspended from the initial time. The characteristics of the system is studied. Flow-induced vibrations are in general observed to be non-linear. The vibration of the structure affects the fluid flow around the structure which, in turn, changes the induced forces on the structure and thus the structural response. 
 
+In the figure \ref{fig:4.6} the velocity pattern of the flow field is represented for a time period of 2.5s, which is approximately the time taken for one period of oscillation of the cylinder. From the velocity pattern, it can be observed that the flow pattern is affected in the near wake region of the cylinder. The difference can be observed when compared with the rigid cylinder case, where the vortex shedding was symmetrical. The vortex spacing between the opposing vortices is observed to be narrower in the streamwise direction and wider in the transverse direction. In the figure \ref{fig:4.7} the pressure attributed to these flow characteristics can be observed.
+
 The following nomenclature for the simulation with different under relaxation factor schemes is :
 
 \begin{enumerate}[(a)]
@@ -360,7 +362,7 @@ The following nomenclature for the simulation with different under relaxation fa
 \item FASTEST-3D with Steepest Descent URF scheme: SD
 \end{enumerate} 
 
-In the figure \ref{fig:4.5} the variation of force coefficients $C_d$ and $C_l$ is plotted for a certain period of time steps. It can be observed that the onset of the oscillations are little different for each of the relaxation schemes. This is attributed to the varying number of sub-iterations for each scheme and hence, the convergence. 
+In the figure \ref{fig:4.5} the variation of force coefficients $C_d$ and $C_l$ is plotted for a certain period of time steps. It can be observed that the onset of the oscillations are little different for each of the relaxation schemes. This is attributed to the varying number of sub-iterations for each scheme and hence, the convergence of the solver varies per time step. 
 
 \begin{figure}[H]
 \centering
@@ -369,13 +371,452 @@ In the figure \ref{fig:4.5} the variation of force coefficients $C_d$ and $C_l$ 
 \label{fig:4.5}
 \end{figure}
 
+
+\begin{figure}[H]
+\centering
+	\begin{subfigure}[t]{7cm}
+		\fbox{\includegraphics[width=6.5cm]{Sg_1_wor_Vel_150_5s}}
+		\caption{t=150.5s}
+	\end{subfigure}
+%	\hspace{4cm}
+	\begin{subfigure}[t]{7cm}
+%		\centering
+		\fbox{\includegraphics[width=6.5cm]{Sg_1_wor_Vel_151s}}
+		\caption{t=151s}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{7cm}
+		\fbox{\includegraphics[width=6.5cm]{Sg_1_wor_Vel_151_5s}}
+		\caption{t=151.5s}
+	\end{subfigure}
+%	\hspace{4cm}
+	\begin{subfigure}[t]{7cm}
+%		\centering
+		\fbox{\includegraphics[width=6.5cm]{Sg_1_wor_Vel_152s}}
+		\caption{t=152s}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{7cm}
+		\fbox{\includegraphics[width=6.5cm]{Sg_1_wor_Vel_152_5s}}
+		\caption{t=152.5s}
+	\end{subfigure}
+%	\hspace{4cm}
+	\begin{subfigure}[t]{7cm}
+%		\centering
+		\fbox{\includegraphics[width=6.5cm]{Sg_1_wor_Vel_153s}}
+		\caption{t=153s}
+	\end{subfigure}
+\caption{Instantaneous velocity contour}
+\label{fig:4.6}
+\end{figure}
+
 The mean value of drag coefficient $\bar{C_d}$ is calculated to be around 1.72 for all the three under relaxation schemes. The rms value of lift coefficient $C_{l,rms}$ is calculated to be around 0.7. These values are in good concordance with the values of \citet{zhou1999vortex}.
 
-In the figure \ref{fig:4.6} the oscillation of the cylinder is quantified and plotted against a certain period of time. As observed in the previous plot, the onset of oscillation for different under relaxation schemes is observed to be varying.
+\begin{figure}[H]
+\centering
+	\begin{subfigure}[t]{7cm}
+		\fbox{\includegraphics[width=6.5cm]{Sg_1_wor_pres_150_5}}
+		\caption{t=150.5s}
+	\end{subfigure}
+%	\hspace{4cm}
+	\begin{subfigure}[t]{7cm}
+%		\centering
+		\fbox{\includegraphics[width=6.5cm]{Sg_1_wor_pres_151}}
+		\caption{t=151s}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{7cm}
+		\fbox{\includegraphics[width=6.5cm]{Sg_1_wor_pres_151_5}}
+		\caption{t=151.5s}
+	\end{subfigure}
+%	\hspace{4cm}
+	\begin{subfigure}[t]{7cm}
+%		\centering
+		\fbox{\includegraphics[width=6.5cm]{Sg_1_wor_pres_152}}
+		\caption{t=152}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{7cm}
+		\fbox{\includegraphics[width=6.5cm]{Sg_1_wor_pres_152_5}}
+		\caption{t=152.5}
+	\end{subfigure}
+%	\hspace{4cm}
+	\begin{subfigure}[t]{7cm}
+%		\centering
+		\fbox{\includegraphics[width=6.5cm]{Sg_1_wor_pres_153}}
+		\caption{t=153}
+	\end{subfigure}
+\caption{Instantaneous pressure contour plots}
+\label{fig:4.7}
+\end{figure}
+
+In the figure \ref{fig:4.8} the oscillation of the cylinder is quantified and plotted against a certain period of time. As observed in the force coefficient comparison plot, the onset of oscillation for different under relaxation schemes is observed to be varying. The onset of oscillation is at a position $(X/D)_{min}=0.3026, (Y/D)_{min}=-0.2821$ and the transverse oscillation attains a max value of $(Y/D)_{max}=0.2821$ whereas the streamwise oscillation reaches a max distance of $(X/D)_{max}=0.3447$.
 
 \begin{figure}[H]
 \centering
 \fbox{\includegraphics[width=\linewidth]{DC_Sg1_wor}}
 \caption{Variation of displacements vs time}
-\label{fig:4.6}
+\label{fig:4.8}
 \end{figure}
+
+The vortex induced vibration process is a \textit{self limiting process.} According to the study of \citet{griffin1992vortex}, the amplitude of the vibrations could be correlated by Sg. The data examined in the study follow an universal curve. The displacement phase plots appear to have a "figure of 8" shape. The displacement phase plots for the current thesis study is represented in the figure \ref{fig:4.9}. It can be observed that the cylinder oscillations follow the "figure of 8" shape, which is also observed by \citet{zhou1999vortex}. 
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\linewidth]{dxdy_Sg1_wor}}
+\caption{Displacement phase plot}
+\label{fig:4.9}
+\end{figure}
+
+All the quantitative values observed in this simulation study is tabulated and compared with reference values of \citet{zhou1999vortex}. The tabular summary is presented in the table \ref{table:4.6}. The observed values are comparable with the reference values.
+
+% Table generated by Excel2LaTeX from sheet 'M1_Sg1'
+\begin{table}[htbp]
+  \centering
+   \begin{tabular}{|l|c|c|c|c|c|c|c|}
+    \hline
+    \multicolumn{1}{|c|}{\multirow{2}[4]{*}{Simulation cases}} & \multicolumn{7}{c|}{Values} \\
+\cline{2-8}          & $(X/D)_{min}$ & $(X/D)_{max}$ & $(Y/D)_{min}$ & $(Y/D)_{max}$ & $\bar{C_d}$   & $C_{l,rms}$ & $2Y_{rms}/D$ \\
+    \hline
+    Constant & 0.3027 & 0.3447 & -0.2825 & 0.2825 & 1.7253 & 0.7   & 0.3992 \\
+    \hline
+    Aitken & 0.3026 & 0.3445 & -0.2821 & 0.2821 & 1.7244 & 0.6998 & 0.3987 \\
+    \hline
+    SD    & 0.3026 & 0.3445 & -0.2811 & 0.2811 & 1.7248 & 0.6998 & 0.3973 \\
+    \hline
+    Zhou et. al. & 0.2818 & 0.38  & -0.27 & 0.28  & 1.66  & 0.65  & 0.34 \\
+    \hline
+    \end{tabular}%
+    \caption{Tabular summary of quantitative values observed for case 1 without a flow restart file}
+  \label{table:4.6}%
+\end{table}%
+
+\subsubsection{With a flow restart file}
+For this simulation, the initial conditions are used from the rigid cylinder case. The simulations were started at a physical time of 200s, and were performed for nearly 50 vortex shedding cycles. 
+
+The results of the simulation is presented in this section. In figure \ref{fig:4.10} the force coefficients ($C_d$) and ($C_l$) are compared and visualized for an approximate period of 10 oscillations of the cylinder in the transverse direction of the flow. It could be observed that the onset of oscillations are happening exactly at the same time irrespective of the relaxation schemes. This could be attributed to the fact that the initial conditions are the same in each case and the system is in equilibrium. The mean and rms values of the coefficients are calculated to be $\bar{C_d} = 1.72$ and $C_{l,rms} = 0.70$ respectively, which is exactly similar to the values observed with the non-restart simulation.
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\linewidth]{FC_Sg1_wr}}
+\caption{Variation of Drag and Lift coefficients for case 1 with a flow restart file}
+\label{fig:4.10}
+\end{figure}
+
+In the figure \ref{fig:4.11} the variation of displacements over time is studied for the same period of about 5 oscillations of the cylinder. The onset of oscillation is observed at a position $(X/D)_{min}=0.30, (Y/D)_{min}=-0.28$ and the transverse oscillation attains a max value of $(Y/D)_{max}=0.28$ whereas the streamwise oscillation reaches a max distance of $(X/D)_{max}=0.34$. These values are similar to the simulation with the non-restart case. It can be observed that all three relaxation schemes has the same values and the oscillations are also identical.
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\linewidth]{DC_Sg1_wr}}
+\caption{Variation of displacements vs time}
+\label{fig:4.11}
+\end{figure}
+
+The displacement phase plot for this simulation is represented in the figure \ref{fig:4.12}. It can be observed that the supposed "figure of 8" shape has been replicated in this simulation as well. However, the equilibrium position of the vibration in the streamwise direction is not zero, which was the case with previous simulation result. 
+
+The equilibrium position is comparable to the results observed by \citet{zhou1999vortex}. This could be attributed to the initial conditions, which affects the equilibrium position of vibration. The observed quantitative values are summarized in the table \ref{table:4.7}. The values observed are identical to the case with non-restart and comparable to the reference values.
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\linewidth]{dxdy_Sg1_wr}}
+\caption{Displacement phase plot}
+\label{fig:4.12}
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+   \begin{tabular}{|l|c|c|c|c|c|c|c|}
+    \hline
+    \multicolumn{1}{|c|}{\multirow{2}[4]{*}{Simulation cases}} & \multicolumn{7}{c|}{Values} \\
+\cline{2-8}          & $(X/d)_{min}$ & $(X/d)_{max}$ & $(Y/d)_{min}$ & $(Y/d)_{max}$ & $\bar{C_d}$  & $C_{l,rms}$ & $2Y_{rms}/D$ \\
+    \hline
+    Constant & 0.3027 & 0.344 & -0.2825 & 0.2825 & 1.723 & 0.7009 & 0.3994 \\
+    \hline
+    Aitken & 0.3026 & 0.3433 & -0.2821 & 0.2821 & 1.7231 & 0.7023 & 0.3989 \\
+    \hline
+    SD    & 0.304 & 0.3446 & -0.2898 & 0.2898 & 1.7335 & 0.7104 & 0.4005 \\
+    \hline
+    Zhou et. al. & 0.2818 & 0.38  & -0.27 & 0.28  & 1.66  & 0.65  & 0.34 \\
+    \hline
+    \end{tabular}%
+    \caption{Tabular summary of quantitative values observed for case 1 with a flow restart file}
+  \label{table:4.7}%
+\end{table}%
+
+\subsubsection{Study of acceleration parameters}
+
+In the simulations conducted for the case-1 with and without restart, the acceleration of the implemented adaptive relaxation schemes has been studied. This section deals with the discussion of the observations made during the study. Two major factors are studied and used as a source of comparison between the cases.
+
+\begin{enumerate}[(i)]
+\item Average number of FSI sub-iterations per time step during the solution (${sub-iter}_{mean}$)
+\item Average time taken per time step during the solution (${\bar{t}} per ts$), where ts is time step.
+\end{enumerate}
+
+All three schemes have been simulated for a total of around 50 vortex shedding cycles, (physical time scale of approximately 256s). The observed quantities are quantified in the table below.
+
+% Table generated by Excel2LaTeX from sheet 'M1_Sg1'
+\begin{table}[htbp]
+  \centering
+   \begin{tabular}{|l|c|c|c|c|}
+    \hline
+    \multicolumn{1}{|c|}{\multirow{2}[4]{*}{Simulation cases}} & \multicolumn{4}{c|}{Acceleration parameters} \\
+\cline{2-5}          & ${sub-iter}_{max}$ & ${sub-iter}_{min}$ & ${sub-iter}_{mean}$ & ${\bar{t}} per ts$ in s \\
+    \hline
+    Constant & 22    & 11    & 13    & 0.44 \\
+    \hline
+    Aitken & 25    & 3     & 8     & 0.19 \\
+    \hline
+    SD    & 19    & 11    & 9     & 0.8 \\
+    \hline
+    \end{tabular}%
+   \caption{Acceleration parameters observed during the simulation of case 1}
+  \label{table:4.8}%
+\end{table}%
+
+As expected \textit{Aitken} relaxation scheme offers the best results, with an average time per time step of 0.19s, which is twice as efficient as the current implementation of constant URF scheme. However, the method of \textit{Steepest Descent} offers worse results. It is only nearly half as fast compared to the current version, even though the average number of sub-iterations is reduced by 2 when compared with \textit{Constant URF} implementation. This is because, the \textit{Steepest Descent} method requires an additional run of the FSI solver during each time step in order to calculate the Jacobian matrix. 
+
+\subsection{Results for case 2: M=1 and Sg=0.1}
+In this section the results for the case with a mass ratio M=1 and damping coefficient Sg=0.1 is presented. The simulation results of this case with various parameters just like above is presented and discussed in this section. 
+
+\subsubsection{Results for case 2 without a restart file}
+In this simulation, the cylinder is suspended elastically from the start of simulation. The system characteristics are studied and discussed in this sub-section. In the figures \ref{fig:4.13} and \ref{fig:4.14} the velocity and pressure plots for a time period of approximately one oscillation of the cylinder is presented. From these plots, it could be observed that the oscillations are much erratic than the case 1 with a damping coefficient of Sg=1. The vortices are shed rapidly and it can be observed that the shedding takes place in the middle of the oscillation cycle. The vortices stream is much more chaotic in the flow downstream of the cylinder. This is due to the fact that the cylinder is comparatively free to oscillate due to the lesser damping factor considered. 
+
+The solver settings used for this simulation is tabulated in the table \ref{table:4.9}. The values of  physical properties such as stiffness coefficient k and damping factor d[kg/s] is represented in the table.
+
+\begin{table}[htbp]
+  \centering
+   \begin{tabular}{|l|l|}
+    \hline
+    Time integration & 3 step Runge-Kutta \\
+    \hline
+    Number of time steps & \multicolumn{1}{p{8.645em}|}{300000\newline{}($\approx$ 50 vortex shedding cycles)} \\
+    \hline
+    M     & 1 \\
+    \hline
+    Sg    & 0.01 \\
+    \hline
+    k[N/m]     & 2.6802 \\
+    \hline
+    d[kg/s]     & 0.3331 \\
+    \hline
+    \end{tabular}%
+  \caption{Solver settings for the simulation}
+  \label{table:4.9}%
+\end{table}%
+
+\begin{figure}[H]
+\centering
+	\begin{subfigure}[t]{7cm}
+		\fbox{\includegraphics[width=6.5cm]{Sg_01_v_150_5}}
+		\caption{t=150.5s}
+	\end{subfigure}
+%	\hspace{4cm}
+	\begin{subfigure}[t]{7cm}
+%		\centering
+		\fbox{\includegraphics[width=6.5cm]{Sg_01_v_151}}
+		\caption{t=151s}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{7cm}
+		\fbox{\includegraphics[width=6.5cm]{Sg_01_v_151_5}}
+		\caption{t=151.5s}
+	\end{subfigure}
+%	\hspace{4cm}
+	\begin{subfigure}[t]{7cm}
+%		\centering
+		\fbox{\includegraphics[width=6.5cm]{Sg_01_v_152}}
+		\caption{t=152s}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{7cm}
+		\fbox{\includegraphics[width=6.5cm]{Sg_01_v_152_5}}
+		\caption{t=152.5s}
+	\end{subfigure}
+%	\hspace{4cm}
+	\begin{subfigure}[t]{7cm}
+%		\centering
+		\fbox{\includegraphics[width=6.5cm]{Sg_01_v_153}}
+		\caption{t=153s}
+	\end{subfigure}
+\caption{Instantaneous velocity contour}
+\label{fig:4.13}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+	\begin{subfigure}[t]{7cm}
+		\fbox{\includegraphics[width=6.5cm]{Sg_01_wor_p_150_5}}
+		\caption{t=150.5s}
+	\end{subfigure}
+%	\hspace{4cm}
+	\begin{subfigure}[t]{7cm}
+%		\centering
+		\fbox{\includegraphics[width=6.5cm]{Sg_01_wor_p_151}}
+		\caption{t=151s}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{7cm}
+		\fbox{\includegraphics[width=6.5cm]{Sg_01_wor_p_151_5}}
+		\caption{t=151.5s}
+	\end{subfigure}
+%	\hspace{4cm}
+	\begin{subfigure}[t]{7cm}
+%		\centering
+		\fbox{\includegraphics[width=6.5cm]{Sg_01_wor_p_152}}
+		\caption{t=152s}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{7cm}
+		\fbox{\includegraphics[width=6.5cm]{Sg_01_wor_p_152_5}}
+		\caption{t=152.5s}
+	\end{subfigure}
+%	\hspace{4cm}
+	\begin{subfigure}[t]{7cm}
+%		\centering
+		\fbox{\includegraphics[width=6.5cm]{Sg_01_wor_p_153}}
+		\caption{t=153s}
+	\end{subfigure}
+\caption{Instantaneous pressure contour}
+\label{fig:4.14}
+\end{figure}
+
+In the figure \ref{fig:4.15} the variation of force coefficients $C_d$ and $C_l$ is plotted for a period of approximately 10 oscillations of the cylinder. Once again, the onset of the oscillations are little different for each of the relaxation schemes. In the figure \ref{fig:4.16} the variation of displacements is represented for the same time period. The onset of oscillation is observed at a position $(X/D)_{min}=0.37, (Y/D)_{min}=-0.61$ and the transverse oscillation attains a max value of $(Y/D)_{max}=0.61$ whereas the streamwise oscillation reaches a max distance of $(X/D)_{max}=0.48$. 
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\linewidth]{FC_Sg01_wor}}
+\caption{Variation of Drag and Lift coefficients for case 2 without a flow restart file}
+\label{fig:4.15}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\linewidth]{DC_Sg01_wor}}
+\caption{Variation of displacements vs time}
+\label{fig:4.16}
+\end{figure}
+
+The displacement phase plot is represented in the figure \ref{fig:4.17}. The "figure of 8" shape is maintained with the equilibrium position of the displacement in the streamline direction observed to be at the mean position of oscillation.
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\linewidth]{dxdy_Sg01_wor}}
+\caption{Displacement phase plot}
+\label{fig:4.17}
+\end{figure} 
+
+The values are summarized in the table \ref{table:4.10}. The main characteristics $\bar{C_d}$ and $C_{l,rms}$ are in good agreement with the values observed by \citet{zhou1999vortex}. The difference in other values could be due to the different simulation setup and the usage of solver.
+
+\begin{table}[htbp]
+  \centering
+   \begin{tabular}{|l|c|c|c|c|c|c|c|}
+    \hline
+    \multicolumn{1}{|c|}{\multirow{2}[4]{*}{Simulation cases}} & \multicolumn{7}{c|}{Values} \\
+\cline{2-8}          & $(X/d)_{min}$ & $(X/d)_{max}$ & $(Y/d)_{min}$ & $(Y/d)_{max}$ & $\bar{C_d}$  & $C_{l,rms}$ & $2Y_{rms}/D$ \\
+    \hline
+    Constant & 0.3732 & 0.4779 & -0.6111 & 0.6111 & 2.2588 & 0.862 & 0.8655 \\
+    \hline
+    Aitken & 0.3734 & 0.4741 & -0.611 & 0.611 & 2.2575 & 0.8632 & 0.8641 \\
+    \hline
+    SD    & 0.3775 & 0.4788 & -0.6255 & 0.6245 & 2.2966 & 0.8684 & 0.8844 \\
+    \hline
+    Zhou et. al. & 0.28 & 0.5 & -0.57 & 0.56 & 2.06 & 0.84 & 0.75 \\
+    \hline
+    \end{tabular}%
+    \caption{Tabular summary of quantitative values observed for case 2 without a flow restart file}
+  \label{table:4.10}%
+\end{table}%
+
+\subsubsection{Results for case 2 with a restart file}
+
+This section deals with the results and discussion of the simulation of the case 2 with a flow restart file. This study of with and without flow restart files is conducted to study the effect of initial conditions on the vibration response of the cylinder. In the figure \ref{fig:4.18}, the force comparison plot is represented for a period of 10 oscillations of the cylinder. It could be observed that the $C_d$ has an interesting pattern of oscillation. It has been observed that there is an alternating peak point of oscillation along the streamwise direction. The oscillations along the streamwise direction is continuous with alternating peaks in each cycle of oscillation.
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\linewidth]{FC_Sg01_wr}}
+\caption{Variation of Drag and Lift coefficients for case 2 with a flow restart file}
+\label{fig:4.18}
+\end{figure}
+
+In the figure \ref{fig:4.19}, the displacement variation of the cylinder is represented. It could be observed that in successive oscillations, the peak displacement along the streamwise direction alternates between 0.5 and 0.45. This pattern is not observed in the previous simulation which was without a restart file. The difference in the pattern observed could be due to the differing initial conditions.  
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\linewidth]{DC_Sg01_wr}}
+\caption{Variation of displacements vs time}
+\label{fig:4.19}
+\end{figure}
+
+As observed in the case 1 (M=1,Sg=1), the displacement phase plot is observed to follow the same pattern. The equilibrium position of the mean streamwise displacement is not along the zero position. The displacement phase plot is represented in the \ref{fig:4.20}.
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width=\linewidth]{dxdy_Sg01_wr}}
+\caption{Displacement phase plot}
+\label{fig:4.20}
+\end{figure}
+
+The pressure variation near the cylinder surface, downstream and in the wake region is studied for a period of one oscillation has been studied for both the simulations with and without restart file. The location of the line along which the pressure values is plotted is shown in the figure %\ref{fig:4.21}. 
+The pattern of pressure variation differs between the simulated cases. This maybe due to the effect of the wake region. This comparison plot is represented in the figure \ref{fig:4.22}. The wake region is well established in the simulation with the restart file during the start of the simulation.
+
+%%%%%%%%%%%%%%%Insert figure with line represented along the cylinder%%%
+
+\begin{figure}[H]
+\centering
+	\begin{subfigure}[t]{7cm}
+		\fbox{\includegraphics[width=6.5cm]{PP_wor}}
+		\caption{Without a restart file}
+	\end{subfigure}
+%	\hspace{4cm}
+	\begin{subfigure}[t]{7cm}
+%		\centering
+		\fbox{\includegraphics[width=6.5cm]{PP_wr}}
+		\caption{With a restart file}
+	\end{subfigure}
+\caption{Pressure variation along the represented line for case 2 without and with a restart file}
+\label{fig:4.22}
+\end{figure}
+
+In the table \ref{table:4.11}, the observed values are tabulated and compared with the reference values. The min and max values of displacement are different when compared with the simulation case without a restart file. Whereas the mean and rms values of force coefficients are comparable and in good agreement with the reference values.
+
+\begin{table}[htbp]
+  \centering
+   \begin{tabular}{|l|c|c|c|c|c|c|c|}
+    \hline
+    \multicolumn{1}{|c|}{\multirow{2}[4]{*}{Simulation cases}} & \multicolumn{7}{c|}{Values} \\
+\cline{2-8}          & $(X/d)_{min}$ & $(X/d)_{max}$ & $(Y/d)_{min}$ & $(Y/d)_{max}$ & $\bar{C_d}$  & $C_{l,rms}$ & $2Y_{rms}/D$ \\
+    \hline
+	Constant  & 0.3162 & 0.5163 & -0.6333 & 0.5967 & 2.245 & 0.8952 & 0.8653 \\
+    \hline
+    Aitken  & 0.3277 & 0.5162 & -0.6288 & 0.5971 & 2.2469 & 0.8892 & 0.8657 \\
+    \hline
+    SD    & 0.3209 & 0.5175 & -0.6312 & 0.5985 & 2.2484 & 0.8945 & 0.8685 \\
+    \hline
+    Zhou et. al. & 0.28 & 0.5 & -0.57 & 0.56 & 2.06 & 0.84 & 0.75 \\
+    \hline
+    \end{tabular}%
+    \caption{Tabular summary of quantitative values observed for case 2 with a flow restart file}
+  \label{table:4.11}%
+\end{table}%
+
+The acceleration properties of the under relaxation schemes are studied and the values are presented in the table \ref{table:4.12}. The mean number of sub iterations and the average time taken per time step parameters are summarized in the table.
+
+\begin{table}[htbp]
+  \centering
+   \begin{tabular}{|l|c|c|c|c|}
+    \hline
+    \multicolumn{1}{|c|}{\multirow{2}[4]{*}{Simulation cases}} & \multicolumn{4}{c|}{Acceleration parameters} \\
+\cline{2-5}          & ${sub-iter}_{max}$ & ${sub-iter}_{min}$ & ${sub-iter}_{mean}$ & ${\bar{t}} per ts$ in s \\
+    \hline
+    Constant & 22    & 11    & 13    & 0.48 \\
+    \hline
+    Aitken & 23    & 4     & 8     & 0.22 \\
+    \hline
+    SD    & 25    & 12    & 9     & 0.85 \\
+    \hline
+    \end{tabular}%
+   \caption{Acceleration parameters observed during the simulation of case 2}
+  \label{table:4.12}%
+\end{table}%
+
+The observed values are consistent with the case 1 results. The scheme with the steepest descent method takes more time when compared with the other schemes. Aitken relaxation method is observed to be the accelerated case with an average time of 0.22s per time step. 
